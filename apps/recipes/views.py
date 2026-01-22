@@ -6,10 +6,4 @@ def home(request: HttpRequest) -> HttpResponse:
     return render(
         request,
         "recipes/pages/home.html",
-        
-        context={
-            "name": "Willian",
-            "lastname": "Oliveira",
-            "age": 21,
-        },
     )
