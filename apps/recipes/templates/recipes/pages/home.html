@@ -1,0 +1,95 @@
+
+{% include "recipes/partials/head.html" %}
+
+
+<body>
+    
+    {% include "recipes/partials/header.html" %}
+
+    <main class="main">
+    
+        <section class="hero">
+            <div class="container hero__container">
+                <div class="hero__box">
+                    <span><i data-lucide="sparkle"></i>Descubra sabores incríveis</span>
+                    <h1 class="hero__title">Receitas que <span class="hero__title--highlight">inspiram</span></h1>
+                    <p class="hero__text">Explore milhares de receitas compartilhadas pela nossa comunidade e descubra novos sabores para sua cozinha.</p>
+                    <div class="hero__links">
+                        <a class="hero__link" target="" href="">Explorar Receitas</a>
+                        <a class="hero__link" target="" href="">Compartilhar Receita</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="benefits">
+            <div class="container benefits__container">
+
+                <article class="benefits__item">
+                    <div class="benefits__icon-container">
+                        <i data-lucide="chef-hat" class="benefits__icon"></i>
+                    </div>
+                    <h3 class="benefits__subtitle">Receitas Verificadas</h3>
+                    <p class="benefits__text">Todas as receitas são revisadas pela nossa equipe antes de serem publicadas.</p>
+                </article>
+
+                <article class="benefits__item">
+                    <div class="benefits__icon-container">
+                        <i data-lucide="book-open" class="benefits__icon"></i>
+                    </div>
+                    <h3 class="benefits__subtitle">Instruções Detalhadas</h3>
+                    <p class="benefits__text">Passo a passo completo para você preparar cada receita com perfeição.</p>
+                </article>
+
+                <article class="benefits__item">
+                    <div class="benefits__icon-container">
+                        <i data-lucide="users"  class="benefits__icon"></i>
+                    </div>
+                    <h3 class="benefits__subtitle">Comunidade Ativa</h3>
+                    <p class="benefits__text">Compartilhe suas receitas e inspire outros amantes da culinária.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="highlights">
+            <div class="container highlights__container">
+
+                <div class="highlights__box">
+                    <h2 class="highlights__title">Receitas em Destaque</h2>
+                    <p class="highlights__text">Descubra as receitas mais recentes aprovadas pela nossa comunidade</p>
+                </div>
+
+                <div class="highlights__box">
+                    <div class="highlights__icon-container">
+                        <i data-lucide="chef-hat" class="highlights__icon"></i>
+                    </div>
+
+                    <h3 class="highlights__subtitle">Nenhuma receita ainda</h3>
+                    <p class="highlights__text">Seja o primeiro a compartilhar uma receita incrível!</p>
+                    <a href="highlights__link">Compartilhar Receita</a>
+                </div>
+            </div>
+            
+        </section>
+
+        <section  class="share">
+            <div class="container share__container">
+                <div class="share__box">
+                    <h2 class="share__title">Compartilhe suas receitas</h2>
+                    <p class="share__text">Descubra as receitas mais recentes aprovadas pela nossa comunidade</p>
+                    <a href="highlights__link">Criar Conta Gratuita</a>
+                </div>
+            </div>
+            
+        </section>
+
+    </main>
+
+    {% include "recipes/partials/footer.html" %}
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+</body>
+</html>
