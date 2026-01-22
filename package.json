@@ -1,0 +1,24 @@
+{
+    "name": "django-recipes-app",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "sass-recipes": "sass src/scss/recipes/stylesheets/main.scss apps/recipes/static/recipes/css/recipe.css --watch",
+        "sass-all": "sass src:apps --watch"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/willianOliveira-dev/django-recipes-app.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/willianOliveira-dev/django-recipes-app/issues"
+    },
+    "homepage": "https://github.com/willianOliveira-dev/django-recipes-app#readme",
+    "description": "",
+    "devDependencies": {
+        "sass": "^1.97.2"
+    }
+}

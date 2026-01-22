@@ -1,0 +1,125 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/// Regular font family
+/// @type List
+$text-font-stack:
+    'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial',
+    sans-serif !default;
+
+/// Code (monospace) font family
+/// @type List
+$code-font-stack:
+    'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco',
+    monospace !default;
+
+/// Copy text color
+/// @type Color
+$text-color: rgb(34, 34, 34) !default;
+
+/// Main brand color
+/// @type Color
+$brand-color: rgb(229, 0, 80) !default;
+
+/// Light grey
+/// @type Color
+$light-grey: rgb(237, 237, 237) !default;
+
+/// Medium grey
+/// @type Color
+$mid-grey: rgb(153, 153, 153) !default;
+
+/// Dark grey
+/// @type Color
+$dark-grey: rgb(68, 68, 68) !default;
+
+/// Container's maximum width
+/// @type Length
+$max-width: 1180px !default;
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+    'small': 320px,
+    'medium': 768px,
+    'large': 1024px,
+) !default;
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'https://cdn.example.com/assets/';
+$base-url: '/assets/' !default;
+
+// COLORS - BRAND
+$brand-primary-light: #ff9380;
+$brand-primary-main: #ff5436;
+$brand-primary-dark: #ff3e17;
+
+$brand-secondary-light: #88d487;
+$brand-secondary-main: #50bf4e;
+$brand-secondary-dark: #2d782b;
+
+// COLORS - TEXT
+$text-color-main: #1c1c1c;
+$text-color-muted: #3b3b3b;
+
+// COLORS - BORDER
+$border-light: #e0e0e0;
+$border-card: #ffffff;
+
+// SEMANTIC
+$color-success: #1a971d;
+$color-alert: #c4d620;
+$color-error: #d62020;
+
+// FONT-SIZES
+$font-size-main: 'Inter', $text-font-stack;
+$font-size-secondary: 'Courgette', cursive;
+
+// TEXTS - DESKTOP SIZES
+$text-xxl: 3.98rem; // 39.8px
+$text-xl: 2.76rem; // 27.6x
+$text-lg: 1.92rem; // 19.2px
+$text-md: 1.75rem; // 17.5px
+$text-sm: 1.6rem; // 16px
+$text-xs: 1.33rem; // 13.3px
+
+// TEXTS - MOBILE SIZES
+$text-xxl-mb: 2.8rem; // 28px
+$text-xl-mb: 2.2rem; // 22px
+$text-lg-mb: 1.8rem; // 18px
+$text-md-mb: 1.6rem; // 16px
+$text-sm-mb: 1.6rem; // 16px
+$text-xs-mb: 1.2rem; // 12px
+
+// TEXTS - LINE HEIGHTS
+$line-height-tight: 1.1; // h1 e h2
+$line-height-heading: 1.2; // h3 e h4
+
+// BACKGROUND - PAGE
+$bg-main: #ffffff;
+$bg-muted: #fff0f0;
+
+// SPACING SCALE
+$space-xs: 0.4rem; // 4px
+$space-sm: 0.8rem; // 8px
+$space-md: 1.6rem; // 16px
+$space-lg: 2.4rem; // 24px
+$space-xl: 3.2rem; // 32px
+$space-xxl: 4.8rem; // 48px
+
+// BUTTONS
+$btn-primary-bg: $brand-primary-main;
+$btn-primary-hover: $brand-primary-dark;
+$btn-radius: 0.8rem; // 8px
+$btn-padding-y: 1.2rem; // 12px
+$btn-padding-x: 2.4rem; // 24px
+
+// INPUTS
+$input-bg: #ffffff;
+$input-border: $neutral-border;
+$input-border-focus: $brand-primary-main;
+$input-height: 4.4rem; // 44px
