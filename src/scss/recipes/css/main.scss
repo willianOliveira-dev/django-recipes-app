@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+// GLOBAL
+@use '../../global/css/abstracts' as globa_abstracts;
+
+@use '../../global/css/vendors/normalize' as global_normalize;
+
+@use '../../global/css/base' as global_base;
+
+@use '../../global/css/layouts' as global_layouts;
+
+@use '../../global/css/components' as global_components;
+
+// RECIPES
+@use 'components' as recipes_components;
+
+@use 'pages/home' as recipes_home;

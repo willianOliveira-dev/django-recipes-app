@@ -1,0 +1,43 @@
+@use '../../../global/css/abstracts';
+
+.benefits {
+    &__item {
+        padding: abstracts.$space-lg;
+        text-align: center;
+        @include abstracts.flex(center, center, abstracts.$space-md, column);
+    }
+
+    &__subtitle {
+        font-family: abstracts.$font-family-secondary;
+        @include abstracts.font-size(abstracts.$text-md, abstracts.$text-md-mb);
+        line-height: abstracts.$line-height-heading;
+    }
+
+    &__text {
+        @include abstracts.font-size(abstracts.$text-sm, abstracts.$text-sm-mb);
+    }
+
+    &__icon {
+        @include abstracts.size(abstracts.$text-icon);
+        stroke: abstracts.$text-color-light;
+
+        &-container {
+            @include abstracts.flex();
+            @include abstracts.size(3.82rem);
+            padding: abstracts.$space-xs;
+            border-radius: 100%;
+
+            &--chef {
+                background-color: #ff4b4b97;
+            }
+
+            &--book {
+                background-color: #42c4397d;
+            }
+
+            &--users {
+                background-color: #4bb5fb97;
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+@use '../abstracts';
+
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    box-shadow: abstracts.$box-shadow-sm;
+    background-color: abstracts.$bg-main-opacity;
+
+    &__container {
+        @include abstracts.flex(space-between, center, abstracts.$space-sm);
+        padding: abstracts.$space-md abstracts.$space-lg;
+    }
+
+    &__list {
+        @include abstracts.flex(center, center, abstracts.$space-xs);
+        padding: abstracts.$space-xs abstracts.$space-sm;
+    }
+
+    &__item {
+        @include abstracts.flex();
+    }
+
+    &__link {
+        color: abstracts.$text-color-muted;
+        &:hover {
+            transition: color ease 300ms;
+            color: abstracts.$text-color-main;
+        }
+    }
+}

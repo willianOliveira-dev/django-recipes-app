@@ -1,0 +1,17 @@
+{% load static %}
+<!doctype html>
+<html lang="pt-BR">
+    {% include "recipes/partials/layouts/head.html" %}
+
+    <body>
+        {% include "recipes/partials/layouts/header.html" %}
+
+        <main class="main">{% block content %}{% endblock %}</main>
+
+        {% include "recipes/partials/layouts/footer.html" %}
+    </body>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</html>

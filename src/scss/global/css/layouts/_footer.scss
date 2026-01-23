@@ -1,0 +1,114 @@
+@use '../abstracts';
+
+.footer {
+    background-color: #fafafa;
+    border-top: 1px solid #eee;
+    padding-top: 4rem;
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 6rem;
+        margin-bottom: 6rem;
+    }
+
+    &__item {
+        &--brand {
+            max-width: 32rem;
+        }
+    }
+
+    &__title {
+        font-size: abstracts.$text-sm;
+        font-family: abstracts.$font-family-secondary;
+        font-weight: 700;
+        color: abstracts.$brand-primary-dark;
+        margin-bottom: 2rem;
+        letter-spacing: -0.02em;
+    }
+
+    &__text {
+        font-size: abstracts.$text-sm;
+        color: #666;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    &__list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+
+    &__link {
+        font-size: abstracts.$text-sm;
+        color: #777;
+        text-decoration: none;
+        transition: color 0.2s;
+
+        &:hover {
+            color: abstracts.$brand-primary-main;
+        }
+    }
+
+    &__social-container {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    &__social {
+        width: 4rem;
+        height: 4rem;
+        background-color: #fff;
+        border: 1px solid #eee;
+        border-radius: 50%;
+        @include abstracts.flex(center, center);
+        color: abstracts.$brand-primary-dark;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: abstracts.$brand-primary-main;
+            color: #fff;
+            transform: translateY(-3px);
+            border-color: abstracts.$brand-primary-main;
+        }
+    }
+
+    &__social-icon {
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+
+    &__reserved {
+        padding: 1.5rem 0 1.5rem 0;
+        border-top: 1px solid #eee;
+        text-align: center;
+
+        .footer__text {
+            font-size: abstracts.$text-xs;
+            color: #999;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: abstracts.$space-xs 2rem 2rem;
+
+        &__grid {
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            text-align: center;
+        }
+
+        &__item--brand {
+            max-width: 100%;
+            @include abstracts.flex(center, center, 0, column);
+        }
+
+        &__social-container {
+            justify-content: center;
+        }
+    }
+}

@@ -1,14 +1,10 @@
 @use '../abstracts';
 
-// -----------------------------------------------------------------------------
-// This file contains very basic styles.
-// -----------------------------------------------------------------------------
-
 /**
  * Set up a decent box model on the root element
  */
 html {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /**
@@ -20,18 +16,16 @@ html {
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+    list-style: none;
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
 }
 
 /**
  * Basic styles for links
  */
 a {
-  color: abstracts.$brand-color;
-  text-decoration: none;
-
-  @include abstracts.on-event {
-    color: abstracts.$text-color;
-    text-decoration: underline;
-  }
+    text-decoration: none;
+    color: abstracts.$text-color-main;
 }

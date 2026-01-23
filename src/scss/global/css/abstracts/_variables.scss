@@ -64,6 +64,7 @@ $brand-secondary-dark: #2d782b;
 
 // COLORS - TEXT
 $text-color-main: #1c1c1c;
+$text-color-light: #ffffff;
 $text-color-muted: #3b3b3b;
 
 // COLORS - BORDER
@@ -76,24 +77,27 @@ $color-alert: #c4d620;
 $color-error: #d62020;
 
 // FONT-SIZES
-$font-size-main: 'Inter', $text-font-stack;
-$font-size-secondary: 'Courgette', cursive;
+$font-family-main: 'Inter', $text-font-stack;
+$font-family-logo: 'Modak', cursive;
+$font-family-secondary: 'Playfair Display', serif;
 
 // TEXTS - DESKTOP SIZES
-$text-xxl: 3.98rem; // 39.8px
-$text-xl: 2.76rem; // 27.6x
-$text-lg: 1.92rem; // 19.2px
-$text-md: 1.75rem; // 17.5px
-$text-sm: 1.6rem; // 16px
-$text-xs: 1.33rem; // 13.3px
+$text-xxl: 8rem;
+$text-xl: 4.8rem;
+$text-lg: 3.2rem;
+$text-md: 2rem;
+$text-sm: 1.6rem;
+$text-xs: 1.4rem;
+$text-icon: 2.4rem;
 
 // TEXTS - MOBILE SIZES
-$text-xxl-mb: 2.8rem; // 28px
-$text-xl-mb: 2.2rem; // 22px
-$text-lg-mb: 1.8rem; // 18px
-$text-md-mb: 1.6rem; // 16px
-$text-sm-mb: 1.6rem; // 16px
-$text-xs-mb: 1.2rem; // 12px
+$text-xxl-mb: 4rem;
+$text-xl-mb: 3.2rem;
+$text-lg-mb: 2.4rem;
+$text-md-mb: 1.8rem;
+$text-sm-mb: 1.6rem;
+$text-xs-mb: 1.2rem;
+$text-icon-mb: 1.33rem;
 
 // TEXTS - LINE HEIGHTS
 $line-height-tight: 1.1; // h1 e h2
@@ -101,7 +105,8 @@ $line-height-heading: 1.2; // h3 e h4
 
 // BACKGROUND - PAGE
 $bg-main: #ffffff;
-$bg-muted: #fff0f0;
+$bg-main-opacity: #ffffffc7;
+$bg-muted: #f7f4f0;
 
 // SPACING SCALE
 $space-xs: 0.4rem; // 4px
@@ -111,15 +116,19 @@ $space-lg: 2.4rem; // 24px
 $space-xl: 3.2rem; // 32px
 $space-xxl: 4.8rem; // 48px
 
+// BOX SHADOW
+$box-shadow-sm: 0 0.5rem 0.5rem 0.1rem rgba(0, 0, 0, 0.15);
+$box-shadow-hero: 0 0 5rem 2rem rgba(6, 35, 255, 0.4);
+
 // BUTTONS
 $btn-primary-bg: $brand-primary-main;
 $btn-primary-hover: $brand-primary-dark;
-$btn-radius: 0.8rem; // 8px
+$btn-radius: 2rem; // 20px
 $btn-padding-y: 1.2rem; // 12px
 $btn-padding-x: 2.4rem; // 24px
 
 // INPUTS
 $input-bg: #ffffff;
-$input-border: $neutral-border;
+$input-border: #ffffffe5;
 $input-border-focus: $brand-primary-main;
 $input-height: 4.4rem; // 44px

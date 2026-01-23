@@ -3,8 +3,8 @@
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
-        "sass-recipes": "sass src/scss/recipes/stylesheets/main.scss apps/recipes/static/recipes/css/recipe.css --watch",
-        "sass-all": "sass src:apps --watch"
+        "sass-recipes": "sass src/scss/recipes/css/main.scss apps/recipes/static/recipes/css/style.css --watch",
+        "sass-all": "npm run sass-recipes"
     },
     "repository": {
         "type": "git",
