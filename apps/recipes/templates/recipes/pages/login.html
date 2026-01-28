@@ -1,0 +1,132 @@
+{% extends "recipes/layouts/base_auth.html" %} 
+
+{% block title %} 
+    {{ block.super }} - Autenticação 
+{% endblock title %} 
+
+{% block content %}
+<section class="auth">
+    <div class="container auth__container">
+        <header class="auth__header">
+            {% include "recipes/components/logo.html" %}
+            <p class="auth__subtitle" id="auth-subtitle">Bem-vindo de volta!</p>
+        </header>
+
+        <div class="auth__card">
+            <div class="auth__tabs">
+                <button
+                    type="button"
+                    class="auth__tab auth__tab--active"
+                    id="tab-login"
+                >
+                    Entrar
+                </button>
+                <button type="button" class="auth__tab" id="tab-register">
+                    Criar Conta
+                </button>
+            </div>
+
+            <form
+                action="{% url 'recipes:login' %}"
+                method="POST"
+                class="auth__form"
+                id="form-login"
+            >
+                {% csrf_token %}
+                <div class="auth__field">
+                    <label for="email" class="auth__label">Email</label>
+                    <input
+                        id="email"
+                        type="email"
+                        name="email"
+                        class="auth__input"
+                        placeholder="seu@email.com"
+                        autocomplete="email"
+                    />
+                </div>
+                <div class="auth__field">
+                    <label for="password" class="auth__label">Senha</label>
+                    <div class="auth__input-container">
+                        <input
+                            id="password"
+                            type="password"
+                            name="password"
+                            class="auth__input auth__input-password"
+                            autocomplete="current-password"
+                            placeholder="********"
+                        />
+                        <button
+                            class="auth__button-password-display"
+                            type="button"
+                        >
+                            <i
+                                data-lucide="eye-closed"
+                                class="auth__icon-password"
+                            ></i>
+                        </button>
+                    </div>
+                </div>
+                <button type="submit" class="auth__button">Entrar</button>
+            </form>
+
+            <form
+                action=""
+                method="POST"
+                class="auth__form auth__form--hidden"
+                id="form-register"
+            >
+                {% csrf_token %}
+                <div class="auth__field">
+                    <label class="auth__label">Nome Completo</label>
+                    <input
+                        type="text"
+                        name="name"
+                        class="auth__input"
+                        placeholder="Seu nome"
+                    />
+                </div>
+                <div class="auth__field">
+                    <label for="email" class="auth__label">Email</label>
+                    <input
+                        id="email"
+                        type="email"
+                        name="email"
+                        class="auth__input"
+                        placeholder="seu@email.com"
+                        autocomplete="email"
+                    />
+                </div>
+                <div class="auth__field">
+                    <label for="password" class="auth__label">Senha</label>
+                    <div class="auth__input-container">
+                        <input
+                            id="password"
+                            type="password"
+                            name="password"
+                            class="auth__input auth__input-password"
+                            autocomplete="current-password"
+                            placeholder="********"
+                        />
+                        <button
+                            class="auth__button-password-display"
+                            type="button"
+                        >
+                            <i
+                                data-lucide="eye-closed"
+                                class="auth__icon-password"
+                            ></i>
+                        </button>
+                    </div>
+                </div>
+                <button type="submit" class="auth__button">Criar Conta</button>
+            </form>
+        </div>
+
+        <footer class="auth__footer">
+            <a href="/" class="auth__back-link">
+                <i data-lucide="arrow-left"></i> Voltar para a página inicial
+            </a>
+        </footer>
+    </div>
+</section>
+{% endblock content %}

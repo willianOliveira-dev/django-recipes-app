@@ -1,0 +1,29 @@
+{% extends "recipes/layouts/base.html" %}
+
+{% block title %}{{ block.super }} - Explorar Receitas  {% endblock title %}{{block.super}}
+
+{% load static %}
+
+{% block content %}
+<section class="recipes-header" style="background-image: url('{% static 'recipes/images/image-food.jpg' %}')">
+    <div data-aos="zoom-in-up" class="container recipes-header__container">
+        <h1 class="recipes-header__title">Explorar Receitas</h1>
+        <p class="recipes-header__subtitle">
+            Descubra receitas incríveis criadas pela nossa comunidade
+        </p>
+    </div>
+</section>
+
+{% include "recipes/components/search_bar.html" %}
+
+<section class="recipes-results">
+    <div class="container recipes-results__container">
+        
+        {% include "recipes/components/empty_state.html" %}
+        
+    </div>
+</section>
+
+{% endblock content  %}
+
+

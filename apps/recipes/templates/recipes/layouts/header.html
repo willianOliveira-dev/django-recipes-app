@@ -1,0 +1,47 @@
+<header class="header">
+    <div class="container header__container">
+        <div class="header__left">
+            {% include "recipes/components/logo.html" %}
+
+            <nav class="header__nav">
+                <ul class="header__list">
+                    <li class="header__item">
+                        <a
+                            class="header__link"
+                            href="{% url 'recipes:recipes' %}"
+                        >
+                            Receitas
+                        </a>
+                    </li>
+                    <li class="header__item">
+                        <a class="header__link" href="#">Comunidade</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="header__right">
+            <div class="header__search-container">
+                <i data-lucide="search" class="header__search-icon"></i>
+                <input
+                    type="text"
+                    placeholder="Buscar receitas..."
+                    class="header__search-input"
+                />
+                <kbd class="header__shortcut">⌘K</kbd>
+            </div>
+
+            <div class="header__auth">
+                <a href="{% url 'recipes:login' %}" class="header__login"
+                    >Entrar</a
+                >
+            </div>
+
+            <button class="menu__btn" aria-label="Menu" aria-expanded="false">
+                <i data-lucide="menu" class="menu__icon"></i>
+            </button>
+        </div>
+    </div>
+</header>
+
+{% include "recipes/components/menu.html" %}

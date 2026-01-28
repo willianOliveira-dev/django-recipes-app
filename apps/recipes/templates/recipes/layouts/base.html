@@ -1,0 +1,18 @@
+{% load static %}
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        {% include "recipes/layouts/head.html" %}
+        <title>{% block title %}Sabores{% endblock title %}</title>
+    </head>
+
+    <body class="base-layout">
+        {% include "recipes/layouts/header.html" %}
+
+        <main class="main">{% block content %}{% endblock content %}</main>
+
+        {% include "recipes/layouts/footer.html" %}
+    </body>
+
+    <script src="{% static 'recipes/js/main.js' %}" type="module"></script>
+</html>

@@ -1,4 +1,8 @@
-{% extends "recipes/partials/layouts/base.html" %} 
+{% extends 'recipes/layouts/base.html' %}
+
+{% block title %}
+   {{ block.super }} - Home | Receitas Incríveis
+{% endblock title %}
 
 {% load static %} 
 
@@ -9,7 +13,7 @@
         background-image: url('{% static 'recipes/images/image-hero.jpeg' %}');
     "
 >
-    <div class="container hero__container">
+    <div data-aos="zoom-in-up" class="container hero__container">
         <div class="hero__box">
             <span class="hero__highlight"
                 ><i data-lucide="sparkle" class="hero__icon"></i>Descubra
@@ -24,7 +28,7 @@
                 comunidade e descubra novos sabores para sua cozinha.
             </p>
             <div class="hero__links">
-                <a class="hero__link" href="">Explorar Receitas</a>
+                <a class="hero__link" href="{% url 'recipes:recipes' %}">Explorar Receitas</a>
                 <a class="hero__link" href="">Compartilhar Receita</a>
             </div>
         </div>
@@ -34,17 +38,17 @@
 <section class="benefits">
     <div class="container benefits__container">
 
-        {% include "recipes/partials/components/benefit_card.html" with class="benefits__icon-container--chef" icon="chef-hat" title="Receitas Verificadas" description="Todas as receitas são revisadas pela nossa equipe antes de serem publicadas." %}
+        {% include "recipes/components/benefit_card.html" with class="benefits__icon-container--chef" icon="chef-hat" title="Receitas Verificadas" description="Todas as receitas são revisadas pela nossa equipe antes de serem publicadas." %}
 
-        {% include "recipes/partials/components/benefit_card.html" with class="benefits__icon-container--book" icon="book-open" title="Instruções Detalhadas" description="Passo a passo completo para você preparar cada receita com perfeição." %} 
+        {% include "recipes/components/benefit_card.html" with class="benefits__icon-container--book" icon="book-open" title="Instruções Detalhadas" description="Passo a passo completo para você preparar cada receita com perfeição." %} 
 
-        {% include "recipes/partials/components/benefit_card.html" with class="benefits__icon-container--users" icon="users" title="Comunidade Ativa" description="Compartilhe suas receitas e inspire outros amantes da culinária." %}
+        {% include "recipes/components/benefit_card.html" with class="benefits__icon-container--users" icon="users" title="Comunidade Ativa" description="Compartilhe suas receitas e inspire outros amantes da culinária." %}
     
     </div>
 </section>
 
 <section class="highlights">
-    <div class="container highlights__container">
+    <div  data-aos="fade-down" class="container highlights__container">
         <div class="highlights__box">
             <h2 class="highlights__title">Receitas em Destaque</h2>
             <p class="highlights__text">
@@ -68,7 +72,7 @@
 </section>
 
 <section class="share">
-    <div class="container share__container">
+    <div data-aos="fade-down" class="container share__container">
         <div class="share__box">
             <h2 class="share__title">Compartilhe suas receitas</h2>
             <p class="share__text">
@@ -80,4 +84,4 @@
     </div>
 </section>
 
-{% endblock %}
+{% endblock content %}
