@@ -2,8 +2,9 @@
     "name": "django-recipes-app",
     "version": "1.0.0",
     "main": "index.js",
+    "type": "module",
     "scripts": {
-        "sass-recipes": "sass src/scss/recipes/css/main.scss apps/recipes/static/recipes/css/style.css --watch",
+        "sass-recipes": "sass src/scss/main.scss apps/recipes/static/recipes/css/style.css --watch",
         "sass-all": "npm run sass-recipes"
     },
     "repository": {
