@@ -1,0 +1,157 @@
+@use '../../../global/css/abstracts';
+
+.auth {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: abstracts.$bg-main-cream;
+    padding: abstracts.$space-sm;
+
+    &__container {
+        max-width: 44rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    &__header {
+        @include abstracts.flex(center, center, abstracts.$space-md, column);
+        margin-bottom: abstracts.$space-md;
+    }
+
+    &__logo-container {
+        background-color: abstracts.$brand-primary-main;
+        @include abstracts.size(6.4rem, 6.4rem);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+        color: abstracts.$text-color-light;
+    }
+
+    &__subtitle {
+        color: abstracts.$text-color-muted;
+        @include abstracts.font-size(abstracts.$text-md, abstracts.$text-md-mb);
+    }
+
+    &__card {
+        background-color: abstracts.$text-color-light;
+        border-radius: 16px;
+        padding: 2rem;
+        box-shadow: abstracts.$box-shadow-sm;
+        border: 1px solid rgba(0, 0, 0, 0.03);
+    }
+
+    &__tabs {
+        display: flex;
+        background-color: abstracts.$bg-main-cream;
+        padding: abstracts.$space-xs;
+        border-radius: abstracts.$space-sm;
+        margin-bottom: abstracts.$space-md;
+    }
+
+    &__tab {
+        flex: 1;
+        border: none;
+        padding: 1rem;
+        border-radius: 0.6rem;
+        cursor: pointer;
+        font-weight: 500;
+        color: abstracts.$text-color-main;
+        background: transparent;
+        transition: all 0.3s ease;
+
+        &--active {
+            background-color: abstracts.$text-color-light;
+            color: abstracts.$text-color-main;
+            box-shadow: 0 2px abstracts.$space-xs rgba(0, 0, 0, 0.05);
+        }
+    }
+
+    &__form {
+        text-align: left;
+
+        &--hidden {
+            display: none;
+        }
+    }
+
+    &__field {
+        margin-bottom: 1.2rem;
+    }
+
+    &__label {
+        display: block;
+        @include abstracts.font-size(abstracts.$text-xs, abstracts.$text-xs-mb);
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: abstracts.$text-color-main;
+    }
+
+    &__input {
+        width: 100%;
+        padding: abstracts.$space-sm abstracts.$space-md;
+        border: 1px solid abstracts.$border-light;
+        border-radius: abstracts.$space-sm;
+        background-color: #fcfcfc;
+        outline: none;
+        transition: border-color 0.3s;
+
+        &:focus {
+            border-color: abstracts.$brand-primary-light;
+            border-width: 2px;
+        }
+
+        &-container {
+            position: relative;
+        }
+    }
+
+    &__button {
+        width: 100%;
+        padding: abstracts.$btn-padding;
+        background-color: abstracts.$btn-primary-bg;
+        color: abstracts.$text-color-light;
+        border: none;
+        border-radius: abstracts.$btn-radius;
+        font-weight: 600;
+        cursor: pointer;
+        margin-top: 1rem;
+        transition: opacity 0.3s;
+
+        &:hover {
+            opacity: 0.9;
+        }
+
+        &-password-display {
+            all: unset;
+            position: absolute;
+            background-color: transparent;
+            top: 0.5rem;
+            right: abstracts.$space-sm;
+            cursor: pointer;
+        }
+    }
+
+    &__icon {
+        &-password {
+            color: abstracts.$brand-primary-main;
+        }
+    }
+
+    &__footer {
+        margin-top: 2rem;
+    }
+
+    &__back-link {
+        color: abstracts.$text-color-muted;
+        text-decoration: none;
+        @include abstracts.font-size(abstracts.$text-xs, abstracts.$text-xs-mb);
+        @include abstracts.flex(center, center, abstracts.$space-sm);
+
+        &:hover {
+            color: abstracts.$text-color-main;
+        }
+    }
+}

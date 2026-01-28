@@ -1,4 +1,4 @@
-@use '../abstracts';
+@use '../../../global/css/abstracts';
 
 .logo {
     @include abstracts.flex(center, center, abstracts.$space-sm);
@@ -8,6 +8,8 @@
     &__label {
         font-family: abstracts.$font-family-logo;
         @include abstracts.font-size(abstracts.$text-lg, abstracts.$text-lg-mb);
+        font-weight: 700;
+        font-style: italic;
         line-height: abstracts.$line-height-tight;
     }
 

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
 // -----------------------------------------------------------------------------
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
@@ -78,7 +80,7 @@ $color-error: #d62020;
 
 // FONT-SIZES
 $font-family-main: 'Inter', $text-font-stack;
-$font-family-logo: 'Modak', cursive;
+$font-family-logo: 'Lobster Two', sans-serif;
 $font-family-secondary: 'Playfair Display', serif;
 
 // TEXTS - DESKTOP SIZES
@@ -105,6 +107,7 @@ $line-height-heading: 1.2; // h3 e h4
 
 // BACKGROUND - PAGE
 $bg-main: #ffffff;
+$bg-main-cream: #fdf2d5;
 $bg-main-opacity: #ffffffc7;
 $bg-muted: #f7f4f0;
 
@@ -118,14 +121,12 @@ $space-xxl: 4.8rem; // 48px
 
 // BOX SHADOW
 $box-shadow-sm: 0 0.5rem 0.5rem 0.1rem rgba(0, 0, 0, 0.15);
-$box-shadow-hero: 0 0 5rem 2rem rgba(6, 35, 255, 0.4);
 
 // BUTTONS
 $btn-primary-bg: $brand-primary-main;
 $btn-primary-hover: $brand-primary-dark;
 $btn-radius: 2rem; // 20px
-$btn-padding-y: 1.2rem; // 12px
-$btn-padding-x: 2.4rem; // 24px
+$btn-padding: 1.6rem; //16px
 
 // INPUTS
 $input-bg: #ffffff;

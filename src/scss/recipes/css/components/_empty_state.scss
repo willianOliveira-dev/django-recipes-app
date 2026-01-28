@@ -1,0 +1,52 @@
+@use '../../../global/css/abstracts';
+
+.empty-state {
+    padding: 10rem 0;
+    @include abstracts.flex(center, center, 2rem, column);
+    text-align: center;
+
+    &__icon-box {
+        width: 10rem;
+        height: 10rem;
+        background-color: #fdf2ed;
+        border-radius: 50%;
+        @include abstracts.flex(center, center);
+        margin-bottom: 1rem;
+    }
+
+    &__icon {
+        width: 5rem;
+        height: 5rem;
+        color: #d37548;
+    }
+
+    &__title {
+        font-size: 2.4rem;
+        color: #333;
+        font-weight: 700;
+    }
+
+    &__text {
+        font-size: 1.8rem;
+        color: #777;
+        margin-bottom: 1.5rem;
+    }
+
+    &__link {
+        padding: 1.5rem 4rem;
+        background-color: #d37548;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 0.8rem;
+        font-weight: 600;
+        font-size: 1.6rem;
+        transition:
+            transform 0.2s,
+            filter 0.2s;
+
+        &:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+    }
+}

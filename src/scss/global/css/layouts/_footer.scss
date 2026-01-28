@@ -14,7 +14,11 @@
 
     &__item {
         &--brand {
+           @include abstracts.flex(center, start, abstracts.$space-sm, column);
             max-width: 32rem;
+            & > .logo {
+               justify-content: start;
+            }
         }
     }
 
