@@ -1,7 +1,7 @@
 @use '../abstracts';
 
 .footer {
-    background-color: #fafafa;
+    background-color: abstracts.$bg-muted;
     border-top: 1px solid #eee;
     padding-top: 4rem;
 
@@ -14,10 +14,10 @@
 
     &__item {
         &--brand {
-           @include abstracts.flex(center, start, abstracts.$space-sm, column);
+            @include abstracts.flex(center, start, abstracts.$space-sm, column);
             max-width: 32rem;
             & > .logo {
-               justify-content: start;
+                justify-content: start;
             }
         }
     }

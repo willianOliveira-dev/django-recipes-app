@@ -1,0 +1,173 @@
+@use '../../../global/css/abstracts';
+
+.recipe {
+    &__container {
+        padding: abstracts.$space-xl abstracts.$space-md;
+    }
+
+    &__header {
+        @include abstracts.flex(
+            center,
+            flex-start,
+            abstracts.$space-xl,
+            column
+        );
+        margin-bottom: abstracts.$space-xl;
+    }
+
+    &__back {
+        @include abstracts.flex(flex-start, center, abstracts.$space-xs);
+        margin-bottom: abstracts.$space-sm;
+        color: abstracts.$text-color-muted;
+        font-size: abstracts.$text-xs;
+        padding: abstracts.$space-xs abstracts.$space-sm;
+        border-radius: 1rem;
+        transition: all ease 300ms;
+        text-decoration: none;
+        &:hover {
+            color: abstracts.$text-color-light;
+            background-color: abstracts.$brand-secondary-dark;
+        }
+    }
+
+    &__badge {
+        display: inline-blok;
+        padding: abstracts.$space-xs abstracts.$space-md;
+        border-radius: 2rem;
+        font-size: abstracts.$text-xs;
+        font-weight: 600;
+        color: abstracts.$text-color-light;
+
+        &--category {
+            background-color: abstracts.$brand-secondary-main;
+        }
+    }
+
+    &__title {
+        margin: abstracts.$space-sm 0;
+        font-family: abstracts.$font-family-secondary;
+        font-weight: 700;
+        line-height: abstracts.$line-height-tight;
+        @include abstracts.font-size(abstracts.$text-xl, abstracts.$text-xl-mb);
+
+        &-container {
+            @include abstracts.flex(
+                center,
+                flex-start,
+                abstracts.$space-sm,
+                column
+            );
+        }
+    }
+
+    &__meta {
+        font-size: abstracts.$text-xs;
+        color: abstracts.$text-color-muted;
+    }
+
+    &__description {
+        @include abstracts.font-size(abstracts.$text-md, abstracts.$text-md-mb);
+        color: abstracts.$text-color-muted;
+    }
+
+    &__image-wrapper {
+        margin: abstracts.$space-xl 0;
+        border-radius: 1.2rem;
+        max-height: 50rem;
+        overflow: hidden;
+    }
+
+    &__image {
+        width: 100%;
+        height: auto;
+        display: block;
+
+        &-loader {
+            @include abstracts.flex(center, center);
+            width: 100%;
+            height: clamp(28rem, 50vw, 50rem);
+            background-color: abstracts.$bg-muted;
+        }
+    }
+
+    &__icon {
+        &-image {
+            color: abstracts.$text-color-muted;
+        }
+    }
+
+    &__content {
+        @include abstracts.grid(2, abstracts.$space-xl);
+
+        @media (max-width: map-get(abstracts.$breakpoints, 'medium')) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__subtitle {
+        margin-bottom: abstracts.$space-md;
+        font-weight: 600;
+        font-family: abstracts.$font-family-secondary;
+
+        @include abstracts.font-size(abstracts.$text-md, abstracts.$text-md-mb);
+    }
+
+    &__ingredients,
+    &__preparation {
+        background-color: abstracts.$bg-main;
+        padding: abstracts.$space-lg;
+        border-radius: 1.2rem;
+        box-shadow: abstracts.$box-shadow-sm;
+    }
+
+    &__footer {
+        margin-top: abstracts.$space-xxl;
+        @include abstracts.flex(flex-start, center, abstracts.$space-md);
+        align-items: stretch;
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
+    }
+
+    &__action {
+        @include abstracts.flex(flex-start, center, abstracts.$space-md);
+        padding: abstracts.$btn-padding;
+        border-radius: abstracts.$btn-radius;
+        border: 1px solid abstracts.$border-light;
+        background-color: transparent;
+        font-size: abstracts.$text-sm;
+        cursor: pointer;
+        &--print,
+        &--share {
+            @include abstracts.on-event {
+                background-color: abstracts.$bg-muted;
+            }
+        }
+    }
+}
+
+.ingredients-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    &__item {
+        padding: abstracts.$space-sm 0;
+        border-bottom: 1px solid abstracts.$border-light;
+        font-size: abstracts.$text-sm;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+}
+
+.preparation-steps {
+    padding-left: abstracts.$space-lg;
+
+    &__item {
+        margin-bottom: abstracts.$space-sm;
+        font-size: abstracts.$text-sm;
+        line-height: 1.5;
+    }
+}

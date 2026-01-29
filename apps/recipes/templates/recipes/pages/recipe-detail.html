@@ -1,0 +1,84 @@
+{% extends "recipes/layouts/base.html" %} 
+
+{% block title %} {{ block.super }} - Bolo Simples para Café {% endblock title %} 
+
+{% block content %}
+<section class="recipe">
+    <div class="container recipe__container">
+        <header class="recipe__header">
+            <a href="{% url 'recipes:home' %}" class="recipe__back">
+                <i data-lucide="arrow-left"></i> Voltar às Receitas
+            </a>
+            <div class="recipe__title-container">
+                <span class="recipe__badge recipe__badge--category">
+                    Café da Manhã
+                </span>
+                <h1 class="recipe__title">Bolo Simples para Café</h1>
+                <p class="recipe__description">{{recipe.description}}</p>
+                <p class="recipe__meta">20 de janeiro de 2026</p>
+            </div>
+        </header>
+
+        <div class="recipe__image-wrapper">
+            {% if recipe.cover.url %}
+                <img
+                    src="{{ recipe.cover.url }}"
+                    alt="{{ recipe.title }}"
+                    class="recipe__image"
+                />
+            {% else %} 
+                <div class="recipe__image-loader">
+                    <i data-lucide="image-off" class="recipe__icon-image"></i>
+                </div>
+             {% endif %}  
+        </div>
+
+        <div class="recipe__content">
+            <section class="recipe__ingredients">
+                <h2 class="recipe__subtitle">Ingredientes</h2>
+
+                <ul class="ingredients-list">
+                    <li class="ingredients-list__item">
+                        2 xícaras (chá) farinha de trigo
+                    </li>
+                    <li class="ingredients-list__item">
+                        2 xícaras (chá) açúcar
+                    </li>
+                    <li class="ingredients-list__item">1 xícara (chá) leite</li>
+                    <li class="ingredients-list__item">2 ovos</li>
+                </ul>
+            </section>
+
+            <section class="recipe__preparation">
+                <h2 class="recipe__subtitle">Modo de Preparo</h2>
+
+                <ol class="preparation-steps">
+                    <li class="preparation-steps__item">Separe o fermento.</li>
+                    <li class="preparation-steps__item">
+                        Na batedeira bata os demais ingredientes por
+                        aproximadamente 5 minutos.
+                    </li>
+                    <li class="preparation-steps__item">
+                        Retire a tigela da batedeira, junte o fermento e misture
+                        cuidadosamente.
+                    </li>
+                    <li class="preparation-steps__item">
+                        Leve ao forno preaquecido a 180°C por aproximadamente 35
+                        minutos.
+                    </li>
+                </ol>
+            </section>
+        </div>
+
+        <footer class="recipe__footer">
+            <button type="button" class="recipe__action recipe__action--print">
+                <i data-lucide="printer"></i> Imprimir
+            </button>
+
+            <button type="button" class="recipe__action recipe__action--share">
+                <i data-lucide="share-2"></i> Compartilhar
+            </button>
+        </footer>
+    </div>
+</section>
+{% endblock content %}

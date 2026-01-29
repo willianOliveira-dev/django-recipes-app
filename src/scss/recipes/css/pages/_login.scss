@@ -5,7 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: abstracts.$bg-main-cream;
+    background-color: abstracts.$bg-cream;
     padding: abstracts.$space-sm;
 
     &__container {
@@ -45,7 +45,7 @@
 
     &__tabs {
         display: flex;
-        background-color: abstracts.$bg-main-cream;
+        background-color: abstracts.$bg-cream;
         padding: abstracts.$space-xs;
         border-radius: abstracts.$space-sm;
         margin-bottom: abstracts.$space-md;
