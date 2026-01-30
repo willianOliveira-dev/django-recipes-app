@@ -29,7 +29,7 @@ export function initFeaturedCarousel() {
 
     const startTimer = () => {
         clearInterval(timer);
-        timer = setInterval(() => updateUI(currentIndex + 1), 5000);
+        timer = setInterval(() => updateUI(currentIndex + 1), 10000);
     };
 
     carousel.addEventListener(
