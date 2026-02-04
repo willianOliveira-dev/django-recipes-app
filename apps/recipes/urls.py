@@ -2,11 +2,11 @@ from django.urls import path
 
 from apps.recipes import views
 
-app_name= "recipes"
+app_name = "recipes"
 
 urlpatterns = [
-    path("", views.home, name="home"),
-    path("recipes/", views.recipes, name="recipes"),
-    path("recipes/<uuid:id>", views.recipe, name="recipe"),
-    path("login/",  views.login, name="login")
+    path("", views.home_view, name="home"),
+    path("recipes/", views.recipe_search_view, name="recipes"),
+    path("recipes/<slug:slug>", views.recipe_detail_view, name="recipe"),
+    path("login/", views.login, name="login"),
 ]
