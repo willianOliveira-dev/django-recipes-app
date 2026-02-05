@@ -1,0 +1,20 @@
+<div class="recipe-hero">
+    <div class="recipe-hero__image-container">
+        {% if recipe.cover.url %}
+        <img
+            src="{{ recipe.cover.url }}"
+            alt="{{ recipe.title }}"
+            class="recipe-hero__image"
+        />
+        {% else %}
+        <div class="recipe-hero__image-badge">
+            <i data-lucide="camera"></i>
+            Foto da receita
+        </div>
+        {% endif %}
+    </div>
+    <button class="recipe-hero__share-btn" aria-label="Compartilhar receita">
+        <i data-lucide="share-2"></i>
+        <span>Compartilhar</span>
+    </button>
+</div>

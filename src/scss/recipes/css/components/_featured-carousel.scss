@@ -1,13 +1,20 @@
-@use '../../../global/css/abstracts';
+@use '../../../global/css/abstracts' as *;
 
 .featured {
-    padding: abstracts.$space-xxl 0;
-    background-color: abstracts.$bg-light;
+    padding: $space-xxl 0;
+    background-color: $bg-light;
     overflow: hidden;
+    padding-left: 6rem;
+    padding-right: 6rem;
+
+    @media (max-width: 1200px) {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
 
     &__header {
         text-align: center;
-        margin-bottom: abstracts.$space-xxl;
+        margin-bottom: $space-xxl;
         position: relative;
 
         &::before,
@@ -20,44 +27,40 @@
             background: linear-gradient(
                 90deg,
                 transparent,
-                abstracts.$brand-primary-light,
+                $brand-primary-light,
                 transparent
             );
             display: none;
+
             @media (min-width: 992px) {
                 display: block;
             }
         }
+
         &::before {
             left: 5%;
         }
+
         &::after {
             right: 5%;
         }
     }
 
     &__title {
-        font-family: abstracts.$font-family-secondary;
+        font-family: $font-family-secondary;
         text-transform: uppercase;
         letter-spacing: 0.3rem;
         font-weight: 700;
-        color: abstracts.$text-color-main;
-        @include abstracts.font-size(abstracts.$text-lg, abstracts.$text-lg-mb);
-    }
-
-    &__carousel {
-        position: relative;
-        width: 100%;
-        max-width: 1100px;
-        margin: 0 auto;
-        touch-action: pan-y;
+        color: $brand-primary-dark;
+        @include font-size($text-lg, $text-lg-mb);
     }
 
     &__wrapper {
         display: grid;
         grid-template-columns: 1fr;
         align-items: center;
-        min-height: 400px;
+        min-height: 40rem;
+        position: relative;
     }
 
     &__item {
@@ -67,9 +70,8 @@
         background: #fff;
         border-radius: 2rem;
         overflow: hidden;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.015);
         border: 1px solid rgba(0, 0, 0, 0.03);
-
         opacity: 0;
         visibility: hidden;
 
@@ -86,14 +88,15 @@
 
         @media (min-width: 768px) {
             flex-direction: row;
-            height: 450px;
+            height: 45rem;
         }
     }
 
     &__image-container {
         flex: 1.1;
-        height: 250px;
+        height: 25rem;
         overflow: hidden;
+
         @media (min-width: 768px) {
             height: 100%;
         }
@@ -112,26 +115,28 @@
 
     &__content {
         flex: 1;
-        padding: abstracts.$space-xl;
+        padding: $space-xl;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
+
         @media (min-width: 768px) {
-            padding: abstracts.$space-xxl;
+            padding: $space-xxl;
         }
     }
 
     &__item-title {
-        font-family: abstracts.$font-family-main;
-        color: abstracts.$text-color-main;
+        font-family: $font-family-main;
+        color: $text-color-main;
         margin-bottom: 1.5rem;
         line-height: 1.2;
-        @include abstracts.font-size(2.8rem, 2.2rem);
+        @include font-size(2.8rem, 2.2rem);
     }
 
     &__description {
-        color: abstracts.$text-color-muted;
+        color: $text-color-muted;
+        font-style: italic;
         line-height: 1.7;
         margin-bottom: 2.5rem;
         font-size: 1.5rem;
@@ -139,17 +144,18 @@
 
     &__button {
         padding: 1.2rem 3rem;
-        background-color: abstracts.$brand-primary-main;
-        color: abstracts.$text-color-light;
-        border-radius: 50px;
+        background-color: $brand-primary-main;
+        color: $text-color-light;
+        border-radius: 5rem;
         text-decoration: none;
         font-weight: 600;
         text-transform: uppercase;
         font-size: 1.1rem;
         letter-spacing: 1px;
         transition: all 0.3s ease;
+
         &:hover {
-            background-color: darken(abstracts.$brand-primary-main, 8%);
+            background-color: darken($brand-primary-main, 8%);
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
@@ -158,8 +164,7 @@
     &__nav {
         position: absolute;
         top: 50%;
-        transform: translateY(-50%);
-        background-color: abstracts.$bg-light;
+        background-color: $bg-light;
         border: none;
         width: 4.5rem;
         height: 4.5rem;
@@ -173,25 +178,32 @@
         transition: 0.3s;
 
         &:hover {
-            background-color: abstracts.$brand-primary-main;
-            color: abstracts.$text-color-light;
+            background-color: $brand-primary-main;
+            color: $text-color-light;
         }
 
         &--prev {
-            left: -2.25rem;
+            left: 0;
+            transform: translate(-50%, -50%);
         }
+
         &--next {
-            right: -2.25rem;
+            right: 0;
+            transform: translate(50%, -50%);
         }
 
         @media (max-width: 1200px) {
             &--prev {
                 left: 1rem;
+                transform: translate(-50%, -50%);
             }
+
             &--next {
                 right: 1rem;
+                transform: translate(50%, -50%);
             }
         }
+
         @media (max-width: 768px) {
             display: none;
         }
@@ -202,6 +214,7 @@
         justify-content: center;
         gap: 1rem;
         margin-top: 3rem;
+
         @media (min-width: 768px) {
             position: absolute;
             bottom: 3rem;
@@ -210,17 +223,16 @@
     }
 
     &__dot {
-        width: 8px;
-        height: 8px;
-        background-color: abstracts.$text-color-muted;
+        @include size($space-sm);
+        background-color: $text-color-muted;
         border-radius: 50%;
         cursor: pointer;
         transition: 0.4s;
 
         &--active {
-            width: 25px;
-            background-color: abstracts.$brand-primary-main;
-            border-radius: 10px;
+            width: 2.5rem;
+            background-color: $brand-primary-main;
+            border-radius: 1rem;
         }
     }
 }

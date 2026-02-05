@@ -1,7 +1,7 @@
-@use '../abstracts';
+@use '../abstracts' as *;
 
 .footer {
-    background-color: abstracts.$bg-muted;
+    background-color: $bg-muted;
     border-top: 1px solid #eee;
     padding-top: 4rem;
 
@@ -14,7 +14,7 @@
 
     &__item {
         &--brand {
-            @include abstracts.flex(center, start, abstracts.$space-sm, column);
+            @include flex(center, start, $space-sm, column);
             max-width: 32rem;
             & > .logo {
                 justify-content: start;
@@ -23,16 +23,16 @@
     }
 
     &__title {
-        font-size: abstracts.$text-sm;
-        font-family: abstracts.$font-family-secondary;
+        font-size: $text-sm;
+        font-family: $font-family-secondary;
         font-weight: 700;
-        color: abstracts.$brand-primary-dark;
+        color: $brand-primary-dark;
         margin-bottom: 2rem;
         letter-spacing: -0.02em;
     }
 
     &__text {
-        font-size: abstracts.$text-sm;
+        font-size: $text-sm;
         color: #666;
         line-height: 1.6;
         margin: 0;
@@ -46,13 +46,13 @@
     }
 
     &__link {
-        font-size: abstracts.$text-sm;
+        font-size: $text-sm;
         color: #777;
         text-decoration: none;
         transition: color 0.2s;
 
         &:hover {
-            color: abstracts.$brand-primary-main;
+            color: $brand-primary-main;
         }
     }
 
@@ -67,15 +67,15 @@
         background-color: #fff;
         border: 1px solid #eee;
         border-radius: 50%;
-        @include abstracts.flex(center, center);
-        color: abstracts.$brand-primary-dark;
+        @include flex(center, center);
+        color: $brand-primary-dark;
         transition: all 0.3s ease;
 
         &:hover {
-            background-color: abstracts.$brand-primary-main;
+            background-color: $brand-primary-main;
             color: #fff;
             transform: translateY(-3px);
-            border-color: abstracts.$brand-primary-main;
+            border-color: $brand-primary-main;
         }
     }
 
@@ -90,7 +90,7 @@
         text-align: center;
 
         .footer__text {
-            font-size: abstracts.$text-xs;
+            font-size: $text-xs;
             color: #999;
         }
     }
@@ -98,7 +98,7 @@
 
 @media (max-width: 768px) {
     .footer {
-        padding: abstracts.$space-xs 2rem 2rem;
+        padding: $space-xs 2rem 2rem;
 
         &__grid {
             grid-template-columns: 1fr;
@@ -108,7 +108,7 @@
 
         &__item--brand {
             max-width: 100%;
-            @include abstracts.flex(center, center, 0, column);
+            @include flex(center, center, 0, column);
         }
 
         &__social-container {

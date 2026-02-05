@@ -1,0 +1,403 @@
+@use '../../../../global/css/abstracts' as *;
+
+.recipe-reviews {
+    margin-bottom: 4.8rem;
+
+    @media (max-width: 768px) {
+        margin-bottom: 3.2rem;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2.4rem;
+        flex-wrap: wrap;
+        gap: 1.2rem;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    &__title {
+        font-family: $font-family-secondary;
+        font-weight: 700;
+        font-size: 2.8rem;
+        color: $text-color-main;
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+        margin: 0;
+
+        i {
+            color: $brand-primary-main;
+            width: 32px;
+            height: 32px;
+            stroke-width: 2;
+        }
+
+        @media (max-width: 768px) {
+            font-size: 2.4rem;
+
+            i {
+                width: 28px;
+                height: 28px;
+            }
+        }
+    }
+
+    &__add-btn {
+        background-color: transparent;
+        border: 2px solid $border-light;
+        color: $text-color-main;
+        border-radius: 50px;
+        padding: 0.8rem 2rem;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        font-family: $font-family-main;
+        font-weight: 600;
+        font-size: 1.6rem;
+        cursor: pointer;
+        transition: all 0.25s ease;
+
+        &:hover {
+            background: rgba($brand-primary-main, 0.05);
+            border-color: rgba($brand-primary-main, 0.4);
+            color: $brand-primary-main;
+        }
+
+        i {
+            width: 20px;
+            height: 20px;
+            stroke-width: 2;
+        }
+
+        @media (max-width: 768px) {
+            width: 100%;
+            justify-content: center;
+            padding: 0.8rem;
+        }
+    }
+
+    &__form {
+        background: $bg-light;
+        border-radius: 24px;
+        padding: 2.8rem;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        margin-bottom: 3.2rem;
+        display: none;
+
+        @media (max-width: 768px) {
+            padding: 2.2rem;
+        }
+    }
+
+    &__form-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+    }
+
+    &__form-title {
+        font-family: $font-family-secondary;
+        font-weight: 700;
+        font-size: 2.2rem;
+        color: $text-color-main;
+        margin: 0;
+
+        @media (max-width: 768px) {
+            font-size: 2rem;
+        }
+    }
+
+    &__form-close {
+        background: none;
+        border: none;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $text-color-muted;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover {
+            background: rgba($brand-primary-main, 0.1);
+            color: $brand-primary-main;
+            transform: rotate(90deg);
+        }
+
+        i {
+            width: 24px;
+            height: 24px;
+            stroke-width: 2.5;
+        }
+    }
+
+    &__rating {
+        margin-bottom: 2rem;
+    }
+
+    &__stars {
+        display: flex;
+        gap: 0.4rem;
+        direction: rtl;
+
+        input {
+            display: none;
+
+            &:checked ~ input,
+            &:checked ~ i {
+                color: #ddd;
+            }
+
+            &:hover,
+            &:hover ~ input,
+            &:hover ~ i {
+                color: #ddd;
+            }
+
+            &:hover ~ i,
+            &:checked ~ i {
+                color: $brand-primary-main;
+            }
+        }
+
+        i {
+            color: #ddd;
+            font-size: 2.8rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            width: 28px;
+            height: 28px;
+            stroke-width: 1.5;
+            fill: none;
+
+            &.is-filled,
+            &:hover {
+                fill: $brand-primary-main;
+                stroke: $brand-primary-main;
+                color: $brand-primary-main;
+            }
+        }
+    }
+
+    &__textarea {
+        width: 100%;
+        min-height: 140px;
+        padding: 1.6rem;
+        border-radius: 16px;
+        border: 2px solid rgba($border-light, 0.8);
+        font-family: $font-family-main;
+        font-size: 1.6rem;
+        resize: vertical;
+        margin-bottom: 1.6rem;
+        background: rgba($bg-light, 0.9);
+        transition: all 0.25s ease;
+
+        &:focus {
+            outline: none;
+            border-color: $brand-primary-main;
+            box-shadow: 0 0 0 3px rgba($brand-primary-main, 0.15);
+        }
+
+        @media (max-width: 768px) {
+            font-size: 1.5rem;
+            padding: 1.4rem;
+        }
+    }
+
+    &__submit-btn {
+        background: linear-gradient(135deg, $brand-primary-main, #ff3e17);
+        color: white;
+        border: none;
+        border-radius: 50px;
+        padding: 1.4rem 3.2rem;
+        font-family: $font-family-main;
+        font-weight: 700;
+        font-size: 1.7rem;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        box-shadow: 0 6px 20px rgba($brand-primary-main, 0.3);
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba($brand-primary-main, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            width: 100%;
+            justify-content: center;
+            font-size: 1.6rem;
+            padding: 1.3rem;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-bottom: 2.4rem;
+    }
+
+    &__card {
+        background: $bg-light;
+        border-radius: 20px;
+        padding: 2.4rem;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        @media (max-width: 768px) {
+            padding: 2rem;
+        }
+    }
+
+    &__card-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1.6rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    &__user {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+    }
+
+    &__avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, $brand-primary-main, #ff3e17);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1.8rem;
+        flex-shrink: 0;
+        box-shadow: 0 4px 10px rgba($brand-primary-main, 0.3);
+    }
+
+    &__author {
+        font-weight: 700;
+        font-size: 1.8rem;
+        margin-bottom: 0.2rem;
+    }
+
+    &__date {
+        font-size: 1.4rem;
+        color: $text-color-muted;
+    }
+
+    &__rating-view {
+        display: flex;
+        gap: 0.2rem;
+        margin-top: 4px;
+
+        i {
+            width: 20px;
+            height: 20px;
+            stroke-width: 1.5;
+            color: #ddd;
+
+            &.is-filled {
+                color: $brand-primary-main;
+                fill: $brand-primary-main;
+            }
+        }
+    }
+
+    &__text {
+        font-family: $font-family-main;
+        font-size: 1.7rem;
+        color: $text-color-main;
+        line-height: 1.6;
+        margin-bottom: 1.8rem;
+
+        @media (max-width: 768px) {
+            font-size: 1.6rem;
+        }
+    }
+
+    &__actions {
+        border-top: 1px solid rgba($border-light, 0.7);
+        padding-top: 1.6rem;
+    }
+
+    &__helpful {
+        background: rgba($bg-light, 0.8);
+        border: 2px solid rgba($border-light, 0.8);
+        border-radius: 50px;
+        padding: 0.8rem 1.8rem;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        font-family: $font-family-main;
+        font-weight: 600;
+        font-size: 1.5rem;
+        color: $text-color-muted;
+        cursor: pointer;
+        transition: all 0.25s ease;
+
+        &:hover {
+            background: rgba($brand-secondary-main, 0.1);
+            border-color: rgba($brand-secondary-main, 0.3);
+            color: $brand-secondary-main;
+        }
+
+        i {
+            width: 20px;
+            height: 20px;
+            stroke-width: 2;
+        }
+    }
+
+    &__load-more {
+        display: flex;
+        justify-content: center;
+    }
+
+    .btn-outline {
+        background-color: transparent;
+        border: 2px solid $border-light;
+        border-radius: 5rem;
+        padding: 1.2rem 2.8rem;
+        font-family: $font-family-main;
+        font-weight: 600;
+        font-size: 1.6rem;
+        color: $text-color-main;
+        cursor: pointer;
+        transition: all 0.25s ease;
+
+        &:hover {
+            background: rgba($brand-primary-main, 0.05);
+            border-color: rgba($brand-primary-main, 0.4);
+            color: $brand-primary-main;
+        }
+
+        @media (max-width: 768px) {
+            font-size: 1.5rem;
+            padding: 1rem 2.4rem;
+        }
+    }
+}

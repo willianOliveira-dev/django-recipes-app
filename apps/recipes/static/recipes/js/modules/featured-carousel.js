@@ -19,7 +19,6 @@ export function initFeaturedCarousel() {
         items.forEach((item, i) => {
             const isActive = i === currentIndex;
             item.classList.toggle('featured__item--active', isActive);
-            item.style.transform = '';
             if (dots[i])
                 dots[i].classList.toggle('featured__dot--active', isActive);
         });
@@ -37,20 +36,6 @@ export function initFeaturedCarousel() {
         (e) => {
             startX = e.touches[0].clientX;
             clearInterval(timer);
-            const activeItem = items[currentIndex];
-            if (activeItem) activeItem.style.transition = 'none';
-        },
-        { passive: true },
-    );
-
-    carousel.addEventListener(
-        'touchmove',
-        (e) => {
-            const diff = e.touches[0].clientX - startX;
-            const activeItem = items[currentIndex];
-            if (activeItem) {
-                activeItem.style.transform = `translateX(${diff}px) rotate(${diff * 0.02}deg)`;
-            }
         },
         { passive: true },
     );
@@ -59,14 +44,8 @@ export function initFeaturedCarousel() {
         'touchend',
         (e) => {
             const diff = startX - e.changedTouches[0].clientX;
-            const activeItem = items[currentIndex];
-
-            if (activeItem) activeItem.style.transition = '';
-
             if (Math.abs(diff) > 70) {
                 updateUI(currentIndex + (diff > 0 ? 1 : -1));
-            } else {
-                updateUI(currentIndex);
             }
         },
         { passive: true },

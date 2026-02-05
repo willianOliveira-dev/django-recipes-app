@@ -1,17 +1,17 @@
-@use '../../../global/css/abstracts';
+@use '../../../global/css/abstracts' as *;
 
 .hero,
 .benefits,
 .highlights,
 .share {
-    padding: abstracts.$space-xxl 0;
+    padding: $space-xxl 0;
 }
 
 .hero {
     position: relative;
     min-height: 85vh;
     overflow: hidden;
-    @include abstracts.flex();
+    @include flex();
     background-size: cover;
     background-position: center;
 
@@ -39,28 +39,28 @@
         right: 0;
         bottom: 0;
         z-index: 0;
-        background-color: rgba(abstracts.$brand-primary-main, 0.6);
+        background-color: rgba($brand-primary-main, 0.6);
     }
 
     &__container {
         z-index: 10;
-        @include abstracts.flex();
+        @include flex();
     }
 
     &__box {
-        @include abstracts.flex(center, center, abstracts.$space-md, column);
+        @include flex(center, center, $space-md, column);
         max-width: 48rem;
     }
 
     &__title {
-        font-family: abstracts.$font-family-secondary;
-        color: abstracts.$text-color-light;
+        font-family: $font-family-secondary;
+        color: $text-color-light;
         text-align: center;
-        line-height: abstracts.$line-height-tight;
+        line-height: $line-height-tight;
         letter-spacing: -0.02em;
-        @include abstracts.font-size(
-            abstracts.$text-xxl,
-            abstracts.$text-xxl-mb
+        @include font-size(
+            $text-xxl,
+            $text-xxl-mb
         );
 
         &--highlight {
@@ -69,72 +69,73 @@
     }
 
     &__highlight {
-        @include abstracts.flex(center, center, abstracts.$space-xs);
-        color: abstracts.$text-color-light;
-        padding: abstracts.$space-sm;
-        font-size: abstracts.$text-xs;
-        background-color: rgba(abstracts.$bg-main, 0.5);
+        @include flex(center, center, $space-xs);
+        color: $text-color-light;
+        padding: $space-sm;
+        font-size: $text-xs;
+        background-color: rgba($bg-main, 0.5);
         border-radius: 2rem;
     }
 
     &__icon {
-        @include abstracts.size(abstracts.$text-icon-mb);
+        @include size($text-icon-mb);
     }
 
     &__text {
         text-align: center;
-        color: abstracts.$text-color-light;
-        @include abstracts.font-size(abstracts.$text-sm, abstracts.$text-sm-mb);
+        color: $text-color-light;
+        @include font-size($text-sm, $text-sm-mb);
     }
 
     &__links {
-        @include abstracts.flex(center, center, abstracts.$space-md);
+        @include flex(center, center, $space-md);
         width: 100%;
     }
 
     &__link {
         text-align: center;
         border-radius: 2rem;
-        background-color: abstracts.$bg-main;
-        padding: abstracts.$space-md;
-        color: abstracts.$brand-primary-main;
+        background-color: $bg-main;
+        padding: $space-md;
+        color: $brand-primary-main;
         font-weight: 400;
-        @include abstracts.font-size(abstracts.$text-xs, abstracts.$text-xs-mb);
+        @include font-size($text-xs, $text-xs-mb);
         &:hover {
             transition: all ease 300ms;
-            color: abstracts.$text-color-light;
-            background-color: rgba(abstracts.$bg-main, 0.5);
+            color: $text-color-light;
+            background-color: rgba($bg-main, 0.5);
         }
     }
 }
 
 .benefits {
-    background-color: abstracts.$bg-muted;
+    background-color: $bg-muted;
     &__container {
-        @include abstracts.flex(center, center, abstracts.$space-lg);
+        @include flex(center, center, $space-lg);
     }
 }
 
 .highlights {
     padding: 8rem 0;
-    background-color: abstracts.$bg-light;
+    background-color: $bg-light;
 
     &__container {
-        @include abstracts.flex(center, center, 4rem, column);
+        @include flex(center, center, 4rem, column);
         text-align: center;
     }
 
     &__title {
-        font-family: abstracts.$font-family-secondary;
-        font-size: abstracts.$text-lg;
-        color: abstracts.$brand-primary-dark;
+        font-family: $font-family-secondary;
+        @include font-size($text-lg, $text-lg-mb);
+        color: $brand-primary-dark;
+        text-transform: uppercase;
         font-weight: 700;
         margin-bottom: 1rem;
     }
 
     &__text {
-        font-size: abstracts.$text-md;
-        color: abstracts.$text-color-muted;
+        font-size: $text-md;
+        color: $text-color-muted;
         max-width: 60rem;
         line-height: 1.5;
     }
@@ -144,32 +145,32 @@
             padding: 6rem 4rem;
             border: 2px dashed #ddd;
             border-radius: 2rem;
-            background-color: abstracts.$bg-main;
+            background-color: $bg-main;
             transition: transform 0.3s ease;
 
             &:hover {
                 transform: translateY(-5px);
-                border-color: abstracts.$brand-primary-main;
+                border-color: $brand-primary-main;
             }
         }
     }
 
     &__icon-container {
-        @include abstracts.size(8rem);
-        background-color: rgba(abstracts.$brand-primary-main, 0.1);
+        @include size(8rem);
+        background-color: rgba($brand-primary-main, 0.1);
         border-radius: 50%;
-        @include abstracts.flex(center, center);
+        @include flex(center, center);
         margin: 0 auto 2rem;
     }
 
     &__icon {
         width: 4rem;
         height: 4rem;
-        color: abstracts.$brand-primary-main;
+        color: $brand-primary-main;
     }
 
     &__subtitle {
-        font-size: abstracts.$text-md;
+        font-size: $text-md;
         font-weight: 600;
         margin-bottom: 1.5rem;
     }
@@ -178,9 +179,9 @@
         display: inline-block;
         margin-top: 2rem;
         padding: 1.2rem 3rem;
-        background-color: abstracts.$brand-primary-main;
+        background-color: $brand-primary-main;
         color: #fff;
-        font-size: abstracts.$text-sm;
+        font-size: $text-sm;
         font-weight: 600;
         border-radius: 1rem;
         text-decoration: none;
@@ -196,7 +197,7 @@
     padding: 10rem 0;
     background: linear-gradient(
         135deg,
-        abstracts.$brand-secondary-dark 0%,
+        $brand-secondary-dark 0%,
         #1a1a1a 100%
     );
     color: #fff;
@@ -210,7 +211,7 @@
         right: -10%;
         width: 40rem;
         height: 40rem;
-        background-color: rgba(abstracts.$brand-secondary-main, 0.1);
+        background-color: rgba($brand-secondary-main, 0.1);
         border-radius: 50%;
         filter: blur(80px);
     }
@@ -221,21 +222,21 @@
     }
 
     &__box {
-        @include abstracts.flex(center, center, 2.5rem, column);
+        @include flex(center, center, 2.5rem, column);
         text-align: center;
         max-width: 80rem;
         margin: 0 auto;
     }
 
     &__title {
-        font-family: abstracts.$font-family-secondary;
-        @include abstracts.font-size(abstracts.$text-xl, abstracts.$text-xl-mb);
+        font-family: $font-family-secondary;
+        @include font-size($text-xl, $text-xl-mb);
         letter-spacing: -0.02em;
         line-height: 1.1;
     }
 
     &__text {
-        @include abstracts.font-size(abstracts.$text-md, abstracts.$text-md-mb);
+        @include font-size($text-md, $text-md-mb);
         color: rgba(255, 255, 255, 0.8);
         max-width: 60rem;
         line-height: 1.6;
@@ -244,9 +245,9 @@
     &__link {
         display: inline-block;
         padding: 1.8rem 4.5rem;
-        background-color: abstracts.$brand-secondary-main;
+        background-color: $brand-secondary-main;
         color: #fff;
-        font-size: abstracts.$text-sm;
+        font-size: $text-sm;
         font-weight: 700;
         border-radius: 5rem;
         text-decoration: none;
@@ -256,7 +257,7 @@
         &:hover {
             transform: translateY(-3px);
             filter: brightness(1.1);
-            box-shadow: 0 15px 30px rgba(abstracts.$brand-secondary-main, 0.3);
+            box-shadow: 0 15px 30px rgba($brand-secondary-main, 0.3);
         }
 
         &:active {
@@ -286,11 +287,11 @@
         padding: 4rem 2rem;
 
         &__title {
-            font-size: abstracts.$text-lg-mb; // 2.4rem
+            font-size: $text-lg-mb; // 2.4rem
         }
 
         &__text {
-            font-size: abstracts.$text-md-mb; // 1.8rem
+            font-size: $text-md-mb; // 1.8rem
         }
     }
 

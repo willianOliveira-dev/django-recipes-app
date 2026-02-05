@@ -1,0 +1,96 @@
+<section class="recipe-reviews">
+
+    <div class="recipe-reviews__header">
+        <h2 class="recipe-reviews__title">
+            <i data-lucide="message-circle"></i>
+            Avaliações e Comentários
+        </h2>
+
+        <button class="recipe-reviews__add-btn" id="openReviewForm">
+            <i data-lucide="plus"></i>
+            <span>Adicionar avaliação</span>
+        </button>
+    </div>
+
+
+    <div class="recipe-reviews__form" id="reviewForm">
+        <div class="recipe-reviews__form-header">
+            <h3 class="recipe-reviews__form-title">
+                Compartilhe sua experiência
+            </h3>
+            <button class="recipe-reviews__form-close" id="closeReviewForm">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+
+        <div class="recipe-reviews__rating">
+            <label class="recipe-reviews__stars">
+                <input type="radio" name="rating" value="5" /><i
+                    data-lucide="star"
+                ></i>
+                <input type="radio" name="rating" value="4" /><i
+                    data-lucide="star"
+                ></i>
+                <input type="radio" name="rating" value="3" /><i
+                    data-lucide="star"
+                ></i>
+                <input type="radio" name="rating" value="2" /><i
+                    data-lucide="star"
+                ></i>
+                <input type="radio" name="rating" value="1" /><i
+                    data-lucide="star"
+                ></i>
+            </label>
+        </div>
+
+        <textarea
+            class="recipe-reviews__textarea"
+            placeholder="Deixe sua opinião e ajude outros cozinheiros..."
+        >
+        </textarea>
+
+        <button class="recipe-reviews__submit-btn">Enviar Avaliação</button>
+    </div>
+
+
+    <div class="recipe-reviews__list">
+        <article class="recipe-reviews__card">
+            <header class="recipe-reviews__card-header">
+                <div class="recipe-reviews__user">
+                    <div class="recipe-reviews__avatar">AM</div>
+                    <div>
+                        <div class="recipe-reviews__author">Ana Maria</div>
+                        <div class="recipe-reviews__date">
+                            15 de Janeiro de 2026
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recipe-reviews__rating-view">
+                    <i data-lucide="star" class="is-filled"></i>
+                    <i data-lucide="star" class="is-filled"></i>
+                    <i data-lucide="star" class="is-filled"></i>
+                    <i data-lucide="star" class="is-filled"></i>
+                    <i data-lucide="star" class="is-filled"></i>
+                </div>
+            </header>
+
+            <p class="recipe-reviews__text">
+                Receita incrível! Fiz para minha família no domingo e todos
+                adoraram.
+            </p>
+
+            <footer class="recipe-reviews__actions">
+                <button class="recipe-reviews__helpful">
+                    <i data-lucide="thumbs-up"></i>
+                    <span>12 pessoas acharam útil</span>
+                </button>
+            </footer>
+        </article>
+    </div>
+
+   
+    <div class="recipe-reviews__load-more">
+        <button class="btn-outline">Carregar mais avaliações</button>
+    </div>
+</section>

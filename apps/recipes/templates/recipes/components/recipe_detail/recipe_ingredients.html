@@ -1,0 +1,49 @@
+<section class="recipe-ingredients">
+    <header class="recipe-section__header">
+        <h2 class="recipe-section__title">
+            <i data-lucide="shopping-bag"></i>
+            Ingredientes
+        </h2>
+    </header>
+
+    <ul class="recipe-ingredients__list">
+        {% for section in recipe.sections.all %}
+            <li class="recipe-ingredients__section-title">{{ section.title }}</li>
+            {% for item in section.section_ingredient.all %}
+                <li class="recipe-ingredients__item">
+                    <label class="recipe-ingredients__checkbox">
+                        <input type="checkbox" data-ingredient="{{ item.ingredient.name }}" />
+                        <span class="recipe-ingredients__checkmark">
+                            <i data-lucide="check" class="recipe-ingredients__check-icon"></i>
+                        </span>
+                        <div class="recipe-ingredients__content">
+                            {% if item.ingredient.image %}
+                                <img src="{{ item.ingredient.image.url }}" 
+                                    alt="{{ item.ingredient.name }}" 
+                                    class="recipe-ingredients__icon"
+                                    loading="lazy">
+                            {% else %}
+                                <i data-lucide="leaf" class="recipe-ingredients__icon-fallback"></i>
+                            {% endif %}
+
+                            <span class="recipe-ingredients__text">
+                                {% if item.unit == "rendimento_livre" %}
+                                    {{ item.ingredient.name }} a gosto{% if item.note %} ({{ item.note }}){% endif %}
+                                {% elif not item.unit %}
+                                    {{ item.quantity }} {{ item.ingredient.name }}{% if item.note %} {{ item.note }}{% endif %}
+                                {% else %}
+                                    {{ item.quantity }} {{ item.get_unit_display }} de {{ item.ingredient.name }}{% if item.note %} {{ item.note }}{% endif %}
+                                {% endif %}
+                            </span>
+                        </div>
+                    </label>
+                </li>
+            {% endfor %}
+        {% empty %}
+            <li class="recipe-ingredients__empty">
+                <i data-lucide="inbox"></i>
+                <p>Ingredientes serão adicionados em breve</p>
+            </li>
+        {% endfor %}
+    </ul>
+</section>

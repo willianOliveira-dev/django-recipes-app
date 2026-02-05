@@ -1,15 +1,23 @@
-import { authForm } from './modules/auth-form.js';
-import { handlePasswordDisplay } from './modules/handle-password-display.js';
-import { initMobileMenu } from './modules/menu.js';
-import { AOS } from './modules/aos.js';
 import { lucideDev } from './modules/lucide.js';
-import { initFeaturedCarousel } from './modules/carousel.js';
+import { AOS } from './modules/aos.js';
+import { initMobileMenu } from './modules/menu.js';
+import { initFeaturedCarousel } from './modules/featured-carousel.js';
+import { recipeCopy } from './modules/recipe-copy.js';
+import { recipeRatings } from './modules/recipe-ratings.js';
+import { authForm } from './modules/auth-form.js';
+import { initMostViewedCarousel } from './modules/most-viewed-carousel.js';
+import { handlePasswordDisplay } from './modules/handle-password-display.js';
+import { initScrollToTop } from './modules/init-scroll-to-top.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     lucideDev();
     AOS();
-    initFeaturedCarousel();
     initMobileMenu();
+    initFeaturedCarousel();
+    initMostViewedCarousel()
+    initScrollToTop();
+    recipeCopy();
+    recipeRatings();
     authForm();
     handlePasswordDisplay();
 });

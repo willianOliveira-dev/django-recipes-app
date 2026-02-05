@@ -3,50 +3,28 @@
         <header class="featured__header">
             <h2 class="featured__title">Destaques da Semana</h2>
         </header>
-
         <div class="featured__carousel">
             <div class="featured__wrapper">
-                <article class="featured__item featured__item--active">
-                    <div class="featured__image-container">
-                        <img
-                            src="https://receitasmondial.com.br/wp-content/uploads/2024/09/cha-gelado-de-pessego-mondial.jpg"
-                            alt="Chá gelado de Pêssego"
-                            class="featured__image"
-                        />
-                    </div>
-                    <div class="featured__content">
-                        <h3 class="featured__item-title">
-                            Chá gelado de Pêssego
-                        </h3>
-                        <p class="featured__description">
-                            Refrescante e cheio de sabor, o Chá Preto com
-                            Pêssego é perfeito para quem busca uma bebida leve e
-                            deliciosa para o dia a dia. A união do chá com o
-                            sabor natural da fruta traz um toque doce na medida
-                            certa.
-                        </p>
-                        <a href="#" class="featured__button">Ver Receita</a>
-                    </div>
-                </article>
-
-                <article class="featured__item">
-                    <div class="featured__image-container">
-                        <img
-                            src="https://receitasmondial.com.br/wp-content/uploads/2024/09/Gelado-de-Abacaxi-de-Liquidificador.jpg"
-                            alt="Gelado de Abacaxi"
-                            class="featured__image"
-                        />
-                    </div>
-                    <div class="featured__content">
-                        <h3 class="featured__item-title">Gelado de Abacaxi</h3>
-                        <p class="featured__description">
-                            Uma sobremesa clássica, rápida e extremamente
-                            refrescante para os dias quentes de verão. Feita com
-                            ingredientes simples e muito carinho.
-                        </p>
-                        <a href="#" class="featured__button">Ver Receita</a>
-                    </div>
-                </article>
+                {% for recipe in recipes %}
+                    <article class="featured__item featured__item--active">
+                        <div class="featured__image-container">
+                            <img
+                                src="{{ recipe.cover.url }}"
+                                alt="{{ recipe.title }}"
+                                class="featured__image"
+                            />
+                        </div>
+                        <div class="featured__content">
+                            <h3 class="featured__item-title">
+                                {{ recipe.title }}
+                            </h3>
+                            <p class="featured__description">
+                                {{ recipe.description|truncatechars:150 }}
+                            </p>
+                            <a href="{% url 'recipes:recipe_detail' slug=recipe.slug %}" class="featured__button">Ver Receita</a>
+                        </div>
+                    </article>
+                {% endfor %}
             </div>
             <button
                 class="featured__nav featured__nav--prev"
@@ -62,12 +40,9 @@
             </button>
 
             <footer class="featured__dots">
-                <span class="featured__dot featured__dot--active"></span>
-                <span class="featured__dot"></span>
-                <span class="featured__dot"></span>
-                <span class="featured__dot"></span>
-                <span class="featured__dot"></span>
-                <span class="featured__dot"></span>
+                {% for recipe in recipes %}
+                    <span class="featured__dot {{ forloop.first|yesno:'featured__dot--active,' }}"></span>
+                {% endfor %}
             </footer>
         </div>
     </div>

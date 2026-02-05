@@ -1,8 +1,8 @@
-@use '../../../global/css/abstracts';
+@use '../../../global/css/abstracts' as *;
 
 .empty-state {
     padding: 10rem 0;
-    @include abstracts.flex(center, center, 2rem, column);
+    @include flex(center, center, 2rem, column);
     text-align: center;
 
     &__icon-box {
@@ -10,7 +10,7 @@
         height: 10rem;
         background-color: #fdf2ed;
         border-radius: 50%;
-        @include abstracts.flex(center, center);
+        @include flex(center, center);
         margin-bottom: 1rem;
     }
 

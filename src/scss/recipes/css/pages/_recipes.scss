@@ -1,4 +1,4 @@
-@use '../../../global/css/abstracts';
+@use '../../../global/css/abstracts' as *;
 
 .recipes-header {
     position: relative;
@@ -6,7 +6,7 @@
     text-align: center;
     color: #fff;
     overflow: hidden;
-    background-color: abstracts.$brand-primary-dark;
+    background-color: $brand-primary-dark;
     background-size: cover;
     background-position: center;
 
@@ -18,7 +18,7 @@
         right: 0;
         bottom: 0;
         z-index: 1;
-        background-color: rgba(abstracts.$brand-primary-main, 0.7);
+        background-color: rgba($brand-primary-main, 0.7);
     }
 
     &::before {
@@ -40,15 +40,15 @@
     &__container {
         position: relative;
         z-index: 10;
-        @include abstracts.flex(center, center, 1rem, column);
+        @include flex(center, center, 1rem, column);
     }
 
     &__title {
-        font-family: abstracts.$font-family-secondary;
+        font-family: $font-family-secondary;
         font-weight: 800;
         letter-spacing: -0.02em;
         line-height: 1.1;
-        @include abstracts.font-size(4.8rem, 3.2rem);
+        @include font-size(4.8rem, 3.2rem);
         text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     }
 

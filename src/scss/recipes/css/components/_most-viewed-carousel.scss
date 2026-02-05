@@ -1,0 +1,166 @@
+@use '../../../global/css/abstracts' as *;
+
+.most-viewed {
+    padding: $space-xxl 0;
+    background-color: $bg-light;
+    overflow: hidden;
+
+    &__header {
+        text-align: center;
+        margin-bottom: $space-xxl;
+        position: relative;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 15%;
+            height: 1px;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                $brand-primary-light,
+                transparent
+            );
+            display: none;
+
+            @media (min-width: 992px) {
+                display: block;
+            }
+        }
+
+        &::before {
+            left: 5%;
+        }
+
+        &::after {
+            right: 5%;
+        }
+    }
+
+    &__title {
+        font-family: $font-family-secondary;
+        letter-spacing: 0.3rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $brand-primary-dark;
+        @include font-size($text-lg, $text-lg-mb);
+    }
+
+    &__carousel {
+        position: relative;
+        width: 100%;
+        padding: 0 6rem;
+
+        @media (max-width: 768px) {
+            padding: 0 2rem;
+        }
+    }
+
+    &__viewport {
+        overflow: hidden;
+        width: 100%;
+    }
+
+    &__wrapper {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .recipe-card {
+        flex: 0 0 calc((100% - 3rem) / 3);
+        display: flex;
+        flex-direction: column;
+
+        & > * {
+            flex: 1 1 auto;
+        }
+
+        transition:
+            opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+            visibility 0.8s,
+            transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        will-change: transform, opacity;
+
+        opacity: 0.6;
+        transform: scale(0.95);
+
+        &--active {
+            opacity: 1;
+            transform: scale(1.03);
+            z-index: 2;
+        }
+
+        @media (max-width: 768px) {
+            flex: 0 0 100%;
+        }
+    }
+
+    &__nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: $bg-light;
+        @include size(4.5rem);
+        border: none;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+        transition: 0.3s;
+
+        &:hover {
+            background-color: $brand-primary-main;
+            color: $text-color-light;
+        }
+
+        &--prev {
+            left: 0;
+        }
+
+        &--next {
+            right: 0;
+        }
+
+        @media (max-width: 1200px) {
+            &--prev {
+                left: 1rem;
+            }
+
+            &--next {
+                right: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    &__dots {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 3rem;
+    }
+
+    &__dot {
+        width: 8px;
+        height: 8px;
+        background-color: $text-color-muted;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: 0.4s;
+
+        &--active {
+            width: 25px;
+            background-color: $brand-primary-main;
+            border-radius: 10px;
+            pointer-events: none;
+        }
+    }
+}

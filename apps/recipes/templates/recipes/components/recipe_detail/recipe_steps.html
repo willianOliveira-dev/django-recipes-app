@@ -1,0 +1,28 @@
+<section class="recipe-steps">
+    <header class="recipe-section__header">
+        <h2 class="recipe-section__title">
+            <i data-lucide="utensils"></i>
+            Modo de Preparo
+        </h2>
+    </header>
+
+    {% for section in recipe.sections.all %}
+        <h3 class="recipe-steps__section-title">{{ section.title }}</h3>
+        
+        <div class="recipe-steps__container">
+            {% for step in section.preparations.all %}
+                <div class="recipe-steps__item">
+                    <span class="recipe-steps__number">{{ forloop.counter }}</span>
+                    <p class="recipe-steps__text">{{ step.step }}</p>
+                </div>
+            {% empty %}
+                <p class="recipe-steps__empty">Nenhuma etapa cadastrada para esta seção.</p>
+            {% endfor %}
+        </div>
+    {% empty %}
+        <div class="recipe-steps__empty">
+            <i data-lucide="info"></i>
+            <p>O modo de preparo será adicionado em breve.</p>
+        </div>
+    {% endfor %}
+</section>

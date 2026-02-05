@@ -8,7 +8,6 @@ def home_view(req: HttpRequest) -> HttpResponse:
     """Exibe as prateleiras de receitas (Destaques, Semanal, Populares)."""
 
     data = services.recipe.get_home_data()
-
     return render(req, "recipes/pages/home.html", context=data)
 
 

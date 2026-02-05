@@ -1,0 +1,166 @@
+@use '../../../global/css/abstracts' as *;
+
+.recipe-card {
+    background-color: $bg-light;
+    border-radius: $space-md;
+    border: 1px solid $border-light;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    @include on-event {
+        transform: translateY(-8px);
+        box-shadow: $box-shadow-sm;
+        border-color: $brand-primary-light;
+    }
+
+    &__header {
+        position: relative;
+        @include size(100%, 22rem);
+        overflow: hidden;
+    }
+
+    &__image {
+        @include size(100%);
+        object-fit: cover;
+        transition: transform 0.8s ease;
+
+        .recipe-card:hover & {
+            transform: scale(1.1);
+        }
+    }
+
+    &__grid {
+        @include grid(3, $space-lg);
+        padding: $space-xl 0;
+        width: 100%;
+        max-width: $max-width;
+        margin: 0 auto;
+
+        @media (max-width: map-get($breakpoints, 'large')) {
+            @include grid(2, $space-md);
+            padding: $space-lg $space-md;
+        }
+
+        @media (max-width: map-get($breakpoints, 'medium')) {
+            @include grid(1, $space-md);
+        }
+    }
+
+    &__badges {
+        position: absolute;
+        top: $space-md;
+        left: $space-md;
+    }
+
+    &__badge {
+        background-color: $brand-primary-main;
+        color: $text-color-light;
+        padding: $space-xs $space-md;
+        border-radius: $btn-radius;
+        font-family: $font-family-main;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: $text-xs-mb;
+        letter-spacing: 1px;
+    }
+
+    &__favorite {
+        position: absolute;
+        top: $space-md;
+        right: $space-md;
+        @include size(4rem);
+        @include flex;
+        background-color: $bg-opacity;
+        border: none;
+        border-radius: 50%;
+        color: $brand-primary-main;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        @include on-event {
+            background-color: $brand-primary-main;
+            color: $text-color-light;
+            transform: scale(1.1);
+        }
+
+        i {
+            @include size(2rem);
+        }
+    }
+
+    &__content {
+        padding: $space-lg;
+    }
+
+    &__title {
+        font-family: $font-family-secondary;
+        color: $text-color-main;
+        margin-bottom: $space-sm;
+        line-height: $line-height-heading;
+        @include font-size($text-md, $text-md-mb);
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            @include on-event {
+                color: $brand-primary-main;
+            }
+        }
+    }
+
+    &__description {
+        font-family: $font-family-main;
+        color: $text-color-muted;
+        margin-bottom: $space-lg;
+        line-height: 1.6;
+        @include font-size($text-xs, $text-xs-mb);
+    }
+
+    &__metrics {
+        @include flex(space-between, center);
+        padding-top: $space-md;
+        border-top: 1px solid rgba($border-light, 0.5);
+    }
+
+    &__score {
+        @include flex(flex-start, center, $space-xs);
+        font-weight: 700;
+        color: $brand-primary-main;
+
+        &-count {
+            color: $mid-grey;
+            font-weight: 400;
+            font-size: $text-xs;
+        }
+    }
+
+    &__views {
+        @include flex(center, center, $space-xs);
+        color: $text-color-muted;
+        font-size: $text-xs;
+        font-weight: 500;
+    }
+
+    &__footer {
+        @include flex(flex-start, center, $space-lg);
+        background-color: $bg-muted;
+        padding: $space-md $space-lg;
+        border-top: 1px solid $border-light;
+    }
+
+    &__meta {
+        @include flex(center, center, $space-xs);
+        color: $text-color-muted;
+        font-size: $text-xs;
+
+        i {
+            @include size(1.6rem);
+        }
+    }
+
+    &__icon--star {
+        fill: $brand-primary-main;
+        @include size(1.8rem);
+    }
+}

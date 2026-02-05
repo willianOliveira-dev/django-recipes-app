@@ -1,0 +1,61 @@
+<article class="recipe-card" data-aos="fade-down">
+    <header class="recipe-card__header">
+        <a href="{% url 'recipes:recipe_detail' slug=recipe.slug  %}" class="recipe-card__image-link">
+            {% if recipe.cover %}
+            <img
+                src="{{ recipe.cover.url }}"
+                alt="{{ recipe.title }}"
+                class="recipe-card__image"
+            />
+            {% else %}
+            <div class="recipe-card__placeholder"></div>
+            {% endif %}
+        </a>
+
+        <div class="recipe-card__badges">
+            <span class="recipe-card__badge">{{ recipe.category.name }}</span>
+        </div>
+
+        <button class="recipe-card__favorite" aria-label="Favoritar">
+            <i data-lucide="heart"></i>
+        </button>
+    </header>
+
+    <div class="recipe-card__content">
+        <h3 class="recipe-card__title">
+            <a href="{% url 'recipes:recipe_detail' slug=recipe.slug %}">{{ recipe.title }}</a>
+        </h3>
+
+        <p class="recipe-card__description">
+            {{ recipe.description|truncatechars:70 }}
+        </p>
+
+        <div class="recipe-card__metrics">
+            <div class="recipe-card__score">
+                <i data-lucide="star" class="recipe-card__icon--star"></i>
+                <span class="recipe-card__score-value"
+                    >{{ recipe.rating_avg|default:"0"|floatformat:1 }}</span
+                >
+                <span class="recipe-card__score-count"
+                    >({{ recipe.rating_count }})</span
+                >
+            </div>
+
+            <div class="recipe-card__views">
+                <i data-lucide="eye"></i>
+                <span>{{ recipe.views_count }}</span>
+            </div>
+        </div>
+    </div>
+
+    <footer class="recipe-card__footer">
+        <div class="recipe-card__meta">
+            <i data-lucide="clock"></i>
+            <span>{{ recipe.preparation_time }} {{ recipe.get_preparation_time_unit_display }}</span>
+        </div>
+        <div class="recipe-card__meta">
+            <i data-lucide="users"></i>
+            <span>{{ recipe.servings }}</span>
+        </div>
+    </footer>
+</article>

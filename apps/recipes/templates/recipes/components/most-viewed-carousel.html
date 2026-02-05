@@ -1,0 +1,32 @@
+<section class="most-viewed">
+    <div data-aos="fade-down" class="container">
+        <header class="most-viewed__header">
+            <h2 class="most-viewed__title">Mais Acessadas</h2>
+        </header>
+        <div class="most-viewed__carousel">
+            <div class="most-viewed__viewport">
+                <div class="most-viewed__wrapper">
+                    {% for recipe in recipes %}
+                        {% include "recipes/components/recipe_card.html" with recipe=recipe %}
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <button
+                class="most-viewed__nav most-viewed__nav--prev"
+                aria-label="Anterior"
+            >
+                <i data-lucide="chevron-left"></i>
+            </button>
+            <button
+                class="most-viewed__nav most-viewed__nav--next"
+                aria-label="Próximo"
+            >
+                <i data-lucide="chevron-right"></i>
+            </button>
+
+            <footer class="most-viewed__dots">
+            </footer>
+        </div>
+    </div>
+</section>

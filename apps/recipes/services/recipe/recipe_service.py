@@ -13,13 +13,13 @@ class RecipeService:
         populares e tendências semanais.
         """
         featured = self.recipe_repo.get_featured(6)
-        weekly = self.recipe_repo.get_weekly_highlights(6)
-        most_viewed = self.recipe_repo.get_most_viewed(6)
+        weekly_highlights = self.recipe_repo.get_weekly_highlights(6)
+        most_viewed = self.recipe_repo.get_most_viewed(9)
         top_rated = self.recipe_repo.get_top_rated(6)
 
         return {
+            "weekly_highlights": weekly_highlights if weekly_highlights else top_rated,
             "featured": featured,
-            "weekly": weekly if weekly else top_rated,
             "most_viewed": most_viewed,
         }
 

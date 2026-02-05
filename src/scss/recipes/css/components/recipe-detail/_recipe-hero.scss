@@ -1,0 +1,202 @@
+@use '../../../../global/css/abstracts' as *;
+
+.recipe-hero {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto 3.2rem;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+    background: $bg-light;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 35px 60px rgba(0, 0, 0, 0.18);
+    }
+
+    @media (max-width: 768px) {
+        margin-bottom: 2.4rem;
+        border-radius: 20px;
+    }
+}
+
+.recipe-hero__image-container {
+    position: relative;
+    width: 100%;
+    padding-top: 62.5%;
+    background: linear-gradient(135deg, #f8f5f2 0%, #eae3d5 100%);
+    overflow: hidden;
+
+    @media (max-width: 768px) {
+        padding-top: 56.25%;
+    }
+}
+
+.recipe-hero__image {
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    will-change: transform;
+
+    .recipe-hero:hover & {
+        transform: scale(1.03);
+    }
+}
+
+.recipe-hero__image-badge {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    background: rgba($bg-light, 0.92);
+    backdrop-filter: blur(10px);
+    color: $text-color-main;
+    padding: 0.8rem 1.6rem;
+    border-radius: 50px;
+    font-family: $font-family-main;
+    font-weight: 600;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba($border-light, 0.6);
+    z-index: 2;
+
+    i {
+        width: 18px;
+        height: 18px;
+        stroke-width: 2;
+        color: $brand-primary-main;
+    }
+
+    @media (max-width: 768px) {
+        bottom: 16px;
+        left: 16px;
+        font-size: 1.3rem;
+        padding: 0.7rem 1.4rem;
+
+        i {
+            width: 16px;
+            height: 16px;
+        }
+    }
+}
+
+.recipe-hero__share-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: rgba($bg-light, 0.95);
+    backdrop-filter: blur(12px);
+    color: $brand-primary-main;
+    border: 2px solid rgba($brand-primary-main, 0.2);
+    border-radius: 50px;
+    padding: 0.9rem 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-family: $font-family-main;
+    font-weight: 700;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: 3;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+
+    &:hover {
+        background: rgba($brand-primary-main, 0.1);
+        color: $brand-primary-main;
+        border-color: rgba($brand-primary-main, 0.4);
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+    }
+
+    &:active {
+        transform: translateY(0) scale(1);
+    }
+
+    i {
+        width: 20px;
+        height: 20px;
+        stroke-width: 2;
+    }
+
+    span {
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    @media (max-width: 768px) {
+        top: 16px;
+        right: 16px;
+        padding: 0.8rem;
+        width: 48px;
+        height: 48px;
+        justify-content: center;
+        border-radius: 50%;
+    }
+}
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.recipe-hero__image-badge {
+    animation: float 4s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+@media (max-width: 1024px) {
+    .recipe-hero {
+        margin-bottom: 2.8rem;
+    }
+
+    .recipe-hero__share-btn {
+        top: 20px;
+        right: 20px;
+        font-size: 1.4rem;
+    }
+
+    .recipe-hero__image-badge {
+        bottom: 20px;
+        left: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .recipe-hero {
+        border-radius: 16px;
+    }
+
+    .recipe-hero__image-container {
+        padding-top: 75%;
+    }
+
+    .recipe-hero__image-badge {
+        font-size: 1.2rem;
+        padding: 0.6rem 1.2rem;
+        bottom: 12px;
+        left: 12px;
+    }
+
+    .recipe-hero__share-btn {
+        top: 12px;
+        right: 12px;
+        width: 44px;
+        height: 44px;
+    }
+}

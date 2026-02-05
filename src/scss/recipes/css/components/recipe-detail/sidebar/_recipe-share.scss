@@ -1,0 +1,102 @@
+@use '../../../../../global/css/abstracts' as *;
+
+$color-whatsapp: #25d366;
+$color-instagram: #e1306c;
+
+.recipe-sidebar__card--share {
+    background: $bg-light;
+    border-radius: 24px;
+    padding: 2.4rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid rgba($border-light, 0.7);
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    @media (max-width: 768px) {
+        padding: 2rem;
+    }
+}
+
+.recipe-sidebar__title {
+    font-family: $font-family-secondary;
+    font-weight: 700;
+    font-size: 2.2rem;
+    color: $text-color-main;
+    margin-bottom: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    i {
+        color: $brand-primary-main;
+        width: 28px;
+        height: 28px;
+        stroke-width: 2;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 2rem;
+    }
+}
+
+.recipe-share {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.recipe-share__btn {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.4rem 1.8rem;
+    background: rgba($bg-light, 0.9);
+    border: 2px solid rgba($border-light, 0.8);
+    border-radius: 16px;
+    font-family: $font-family-main;
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: $text-color-main;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    width: 100%;
+
+    i {
+        @include size(3rem);
+        stroke-width: 2;
+        flex-shrink: 0;
+    }
+
+    &:hover {
+        transform: translateX($space-xs);
+    }
+
+    &--whatsapp:hover {
+        color: $color-whatsapp;
+        background-color: rgba($color-whatsapp, 0.05);
+        border-color: rgba($color-whatsapp, 0.3);
+    }
+    &--instagram:hover {
+        color: $color-instagram;
+        background-color: rgba($color-instagram, 0.05);
+        border-color: rgba($color-instagram, 0.3);
+    }
+    &--copy:hover {
+        color: $brand-primary-main;
+        background-color: rgba($brand-primary-main, 0.05);
+        border-color: rgba($brand-primary-main, 0.3);
+    }
+
+    @media (max-width: 768px) {
+        font-size: 1.5rem;
+        padding: 1.2rem 1.6rem;
+
+        i {
+            @include size(2.2rem);
+        }
+    }
+}

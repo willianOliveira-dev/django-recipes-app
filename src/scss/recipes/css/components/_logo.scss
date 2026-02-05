@@ -1,27 +1,27 @@
-@use '../../../global/css/abstracts';
+@use '../../../global/css/abstracts' as *;
 
 .logo {
-    @include abstracts.flex(center, center, abstracts.$space-sm);
+    @include flex(center, center, $space-sm);
     text-decoration: none;
-    color: abstracts.$text-color-main;
+    color: $text-color-main;
 
     &__label {
-        font-family: abstracts.$font-family-logo;
-        @include abstracts.font-size(abstracts.$text-lg, abstracts.$text-lg-mb);
+        font-family: $font-family-logo;
+        @include font-size($text-lg, $text-lg-mb);
         font-weight: 700;
         font-style: italic;
-        line-height: abstracts.$line-height-tight;
+        line-height: $line-height-tight;
     }
 
     &__icon {
-        @include abstracts.size(abstracts.$text-icon);
-        stroke: abstracts.$text-color-light;
+        @include size($text-icon);
+        stroke: $text-color-light;
 
         &-container {
-            @include abstracts.flex();
-            @include abstracts.size(3.82rem);
-            background-color: abstracts.$brand-primary-main;
-            padding: abstracts.$space-xs;
+            @include flex();
+            @include size(3.82rem);
+            background-color: $brand-primary-main;
+            padding: $space-xs;
             border-radius: 100%;
         }
     }

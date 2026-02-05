@@ -1,0 +1,76 @@
+@use '../../../../global/css/abstracts' as *;
+
+$color-favorite: #fc2727;
+
+.recipe-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @media (max-width: 768px) {
+        margin-bottom: 2.4rem;
+    }
+}
+
+.recipe-actions__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 1.2rem 1.8rem;
+    border-radius: 50px;
+    font-family: $font-family-main;
+    font-weight: 600;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 2px solid rgba($border-light, 0.8);
+    background: $bg-light;
+    color: $text-color-main;
+    min-height: 52px;
+    flex: 1;
+    max-width: 220px;
+
+    i {
+        @include size(3rem);
+        stroke-width: 2;
+        flex-shrink: 0;
+    }
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        border-color: rgba($brand-primary-main, 0.4);
+        color: $brand-primary-main;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 1.4rem;
+        padding: 1rem 1.6rem;
+        max-width: none;
+
+        i {
+            @include size(1.8rem);
+        }
+    }
+
+    @media (max-width: 480px) {
+        padding: 0.9rem 1.4rem;
+        font-size: 1.3rem;
+        justify-content: center;
+    }
+}
+
+.recipe-actions__btn--save {
+    background: $color-favorite;
+    border-color: $color-favorite;
+    color: $text-color-light;
+    fill: $text-color-light;
+
+    &:hover {
+        opacity: 0.9;
+        color: $text-color-light;
+        transform: translateY(-2px) scale(1.03);
+    }
+}

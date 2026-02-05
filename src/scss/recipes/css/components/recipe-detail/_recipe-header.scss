@@ -1,0 +1,33 @@
+@use '../../../../global/css/abstracts' as *;
+.recipe-header {
+    margin-bottom: $space-md;
+
+    &__back {
+        display: inline-flex;
+        align-items: center;
+        gap: $space-xs;
+        padding: $space-xs $space-sm;
+        border-radius: $space-sm;
+        font-size: $text-xs;
+        font-weight: 500;
+        color: $text-color-muted;
+        text-decoration: none;
+        transition: all 0.2s ease;
+
+        i {
+            width: 1.6rem;
+            height: 1.6rem;
+        }
+
+        @include on-event {
+            color: $brand-primary-main;
+            background-color: $bg-muted;
+        }
+    }
+
+    @media (max-width: map-get($breakpoints, 'medium')) {
+        &__back {
+            font-size: $text-xs-mb;
+        }
+    }
+}

@@ -62,7 +62,7 @@ class RecipeRepository:
         """
         Lista as receitas com maior volume de tráfego, ordenadas por visualizações e nota média.
         """
-        return self._get_base_queryset().order_by("-views_count", "-rating_avg")[:limit]
+        return self._get_base_queryset().filter().order_by("-views_count", "-rating_avg")[:limit]
 
     def get_top_rated(self, limit: int = 6):
         """

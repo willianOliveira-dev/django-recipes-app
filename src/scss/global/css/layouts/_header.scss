@@ -1,4 +1,4 @@
-@use '../abstracts';
+@use '../abstracts' as *;
 
 .header {
     position: sticky;
@@ -9,11 +9,11 @@
     background-color: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(20px) saturate(180%);
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    padding: abstracts.$space-md abstracts.$space-sm;
+    padding: $space-md $space-sm;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     &__container {
-        @include abstracts.flex(space-between, center);
+        @include flex(space-between, center);
         width: 100%;
         max-width: 1400px;
         margin: 0 auto;
@@ -21,7 +21,7 @@
 
     &__left,
     &__right {
-        @include abstracts.flex(flex-start, center, 3.2rem);
+        @include flex(flex-start, center, 3.2rem);
     }
 
     &__nav {
@@ -31,7 +31,7 @@
     }
 
     &__list {
-        @include abstracts.flex(flex-start, center, 0.4rem);
+        @include flex(flex-start, center, 0.4rem);
         list-style: none;
         margin: 0;
         padding: 0;
@@ -53,28 +53,28 @@
 
     &__link {
         text-decoration: none;
-        color: abstracts.$text-color-main;
+        color: $text-color-main;
         font-weight: 500;
-        font-size: abstracts.$text-xs;
-        @include abstracts.flex(center, center, 0.5rem);
+        font-size: $text-xs;
+        @include flex(center, center, 0.5rem);
         position: relative;
         padding: 1rem 1.6rem;
         border-radius: 0.8rem;
         transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 
         &:hover {
-            color: abstracts.$brand-primary-main;
-            background-color: rgba(abstracts.$brand-primary-main, 0.05);
+            color: $brand-primary-main;
+            background-color: rgba($brand-primary-main, 0.05);
         }
 
         &--active {
-            color: abstracts.$brand-primary-main;
-            background-color: rgba(abstracts.$brand-primary-main, 0.08);
+            color: $brand-primary-main;
+            background-color: rgba($brand-primary-main, 0.08);
         }
     }
 
     &__link-icon {
-        @include abstracts.size(1.6rem);
+        @include size(1.6rem);
         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         stroke-width: 2.5px;
     }
@@ -89,7 +89,7 @@
         box-shadow:
             0 0 0 1px rgba(0, 0, 0, 0.05),
             0 10px 40px -10px rgba(0, 0, 0, 0.12);
-        padding: abstracts.$space-md;
+        padding: $space-md;
         min-width: 680px;
         max-width: 720px;
         opacity: 0;
@@ -122,18 +122,18 @@
     }
 
     &__dropdown-link {
-        @include abstracts.flex(flex-start, center, abstracts.$space-sm);
-        padding: abstracts.$space-sm abstracts.$space-md;
+        @include flex(flex-start, center, $space-sm);
+        padding: $space-sm $space-md;
         border-radius: 0.6rem;
         text-decoration: none;
-        color: abstracts.$text-color-main;
-        font-size: abstracts.$text-xs;
+        color: $text-color-main;
+        font-size: $text-xs;
         font-weight: 500;
         transition: all 0.15s ease;
 
         &:hover {
-            background: rgba(abstracts.$brand-primary-main, 0.06);
-            color: abstracts.$brand-primary-main;
+            background: rgba($brand-primary-main, 0.06);
+            color: $brand-primary-main;
 
             .header__dropdown-icon {
                 transform: scale(1.08);
@@ -142,26 +142,26 @@
     }
 
     &__dropdown-icon {
-        @include abstracts.size(1.8rem);
-        color: abstracts.$text-color-muted;
+        @include size(1.8rem);
+        color: $text-color-muted;
         flex-shrink: 0;
         transition: all 0.15s ease;
     }
 
     &__search-container {
         position: relative;
-        @include abstracts.flex(flex-start, center);
-        background: abstracts.$bg-muted;
+        @include flex(flex-start, center);
+        background: $bg-muted;
         border-radius: 1rem;
-        padding: 0 abstracts.$space-md;
-        border: 1.5px solid abstracts.$border-light;
+        padding: 0 $space-md;
+        border: 1.5px solid $border-light;
         transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         min-width: 280px;
 
         &:focus-within {
-            border-color: abstracts.$brand-primary-main;
+            border-color: $brand-primary-main;
             background: white;
-            box-shadow: 0 0 0 3px rgba(abstracts.$brand-primary-main, 0.1);
+            box-shadow: 0 0 0 3px rgba($brand-primary-main, 0.1);
         }
 
         @media (max-width: 900px) {
@@ -172,75 +172,75 @@
     &__search-input {
         background: transparent;
         border: none;
-        padding: abstracts.$space-sm abstracts.$space-sm;
+        padding: $space-sm $space-sm;
         outline: none;
-        font-size: abstracts.$text-xs;
+        font-size: $text-xs;
         width: 100%;
-        color: abstracts.$text-color-main;
+        color: $text-color-main;
 
         &::placeholder {
-            color: abstracts.$text-color-muted;
+            color: $text-color-muted;
         }
     }
 
     &__search-icon {
-        @include abstracts.size(1.8rem);
-        color: abstracts.$text-color-muted;
+        @include size(1.8rem);
+        color: $text-color-muted;
         flex-shrink: 0;
     }
 
     &__shortcut {
         background: white;
-        border: 1px solid abstracts.$border-light;
+        border: 1px solid $border-light;
         border-radius: 0.4rem;
         padding: 0.2rem 0.6rem;
         font-size: 1.2rem;
-        font-family: abstracts.$font-family-main;
-        color: abstracts.$text-color-muted;
+        font-family: $font-family-main;
+        color: $text-color-muted;
         font-weight: 500;
         box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
     }
 
     &__auth {
-        @include abstracts.flex(flex-start, center, abstracts.$space-md);
+        @include flex(flex-start, center, $space-md);
     }
 
     &__login {
         text-decoration: none;
-        color: abstracts.$text-color-main;
+        color: $text-color-main;
         font-weight: 600;
-        font-size: abstracts.$text-xs;
-        padding: abstracts.$space-sm abstracts.$space-lg;
+        font-size: $text-xs;
+        padding: $space-sm $space-lg;
         border-radius: 0.8rem;
         transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        border: 1.5px solid abstracts.$border-light;
+        border: 1.5px solid $border-light;
         background: white;
 
         &:hover {
-            border-color: abstracts.$brand-primary-main;
-            color: abstracts.$brand-primary-main;
-            background: rgba(abstracts.$brand-primary-main, 0.03);
+            border-color: $brand-primary-main;
+            color: $brand-primary-main;
+            background: rgba($brand-primary-main, 0.03);
         }
     }
 
     &__signup {
         background: linear-gradient(
             135deg,
-            abstracts.$brand-primary-main 0%,
-            abstracts.$brand-primary-dark 100%
+            $brand-primary-main 0%,
+            $brand-primary-dark 100%
         );
         color: #fff;
-        padding: abstracts.$space-sm abstracts.$space-lg;
+        padding: $space-sm $space-lg;
         border-radius: 0.8rem;
         text-decoration: none;
         font-weight: 600;
-        font-size: abstracts.$text-xs;
+        font-size: $text-xs;
         transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: 0 4px 12px rgba(abstracts.$brand-primary-main, 0.2);
+        box-shadow: 0 4px 12px rgba($brand-primary-main, 0.2);
 
         &:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(abstracts.$brand-primary-main, 0.3);
+            box-shadow: 0 6px 16px rgba($brand-primary-main, 0.3);
         }
 
         &:active {
@@ -254,12 +254,12 @@
     background: none;
     border: none;
     cursor: pointer;
-    padding: abstracts.$space-sm;
+    padding: $space-sm;
     border-radius: 0.8rem;
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 
     &:hover {
-        background: rgba(abstracts.$brand-primary-main, 0.05);
+        background: rgba($brand-primary-main, 0.05);
     }
 
     @media (max-width: 768px) {
@@ -270,6 +270,6 @@
 }
 
 .menu__icon {
-    @include abstracts.size(2.4rem);
-    color: abstracts.$text-color-main;
+    @include size(2.4rem);
+    color: $text-color-main;
 }

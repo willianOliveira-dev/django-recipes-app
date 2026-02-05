@@ -1,0 +1,188 @@
+@use '../../../../global/css/abstracts' as *;
+
+.recipe-steps {
+    @media (max-width: 768px) {
+        margin-bottom: 3.2rem;
+    }
+
+    .recipe-section__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2.8rem;
+        flex-wrap: wrap;
+        gap: 1.2rem;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    .recipe-section__title {
+        font-family: $font-family-secondary;
+        font-weight: 800;
+        font-size: 3.2rem;
+        color: $text-color-main;
+        display: flex;
+        align-items: center;
+        gap: 1.4rem;
+        margin: 0;
+        background: linear-gradient(135deg, $text-color-main 0%, #555 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+
+        i {
+            color: $brand-primary-main;
+            width: 36px;
+            height: 36px;
+            stroke-width: 2.2;
+        }
+
+        @media (max-width: 768px) {
+            font-size: 2.6rem;
+
+            i {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+
+    &__section-title {
+        font-family: $font-family-secondary;
+        font-weight: 700;
+        font-size: 2.2rem;
+        color: $text-color-main;
+        margin: 2.4rem 0 1.8rem;
+        padding-bottom: 0.8rem;
+        border-bottom: 2px solid rgba($border-light, 0.6);
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: $brand-primary-main;
+        }
+
+        @media (max-width: 768px) {
+            font-size: 2rem;
+            margin: 2rem 0 1.6rem;
+        }
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.8rem;
+        margin-bottom: 2.8rem;
+
+        @media (max-width: 768px) {
+            gap: 1.4rem;
+            margin-bottom: 2.2rem;
+        }
+    }
+
+    &__item {
+        display: flex;
+        gap: 1.8rem;
+        padding: 2rem;
+        background: rgba($bg-light, 0.85);
+        border-radius: 20px;
+        transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        border: 1px solid rgba($border-light, 0.7);
+
+        &:hover {
+            background: rgba($bg-light, 0.95);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        @media (max-width: 768px) {
+            padding: 1.6rem;
+            gap: 1.4rem;
+        }
+    }
+
+    &__number {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, $brand-primary-main, #ff3e17);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: $font-family-secondary;
+        font-weight: 800;
+        font-size: 1.8rem;
+        flex-shrink: 0;
+        box-shadow: 0 4px 10px rgba($brand-primary-main, 0.25);
+
+        @media (max-width: 768px) {
+            width: 42px;
+            height: 42px;
+            font-size: 1.6rem;
+        }
+    }
+
+    &__text {
+        font-family: $font-family-main;
+        font-size: 1.8rem;
+        color: $text-color-main;
+        line-height: 1.6;
+        margin: 0;
+        align-self: center;
+
+        @media (max-width: 768px) {
+            font-size: 1.7rem;
+        }
+    }
+
+    &__empty {
+        font-family: $font-family-main;
+        font-size: 1.7rem;
+        color: $text-color-muted;
+        text-align: center;
+        padding: 2.4rem;
+        background: rgba($bg-light, 0.7);
+        border-radius: 16px;
+        border: 1px dashed rgba($border-light, 0.5);
+    }
+
+    &__empty-state {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 3.2rem 2rem;
+        text-align: center;
+        color: $text-color-muted;
+        background: rgba($bg-light, 0.7);
+        border-radius: 20px;
+        border: 1px dashed rgba($border-light, 0.5);
+        gap: 1.2rem;
+
+        i {
+            width: 56px;
+            height: 56px;
+            stroke-width: 1.5;
+            color: #ccc;
+        }
+
+        p {
+            font-size: 1.8rem;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        &.full {
+            padding: 4rem 2rem;
+        }
+    }
+}

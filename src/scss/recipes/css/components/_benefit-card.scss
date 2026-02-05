@@ -1,0 +1,43 @@
+@use '../../../global/css/abstracts' as *;
+
+.benefits {
+    &__item {
+        padding: $space-lg;
+        text-align: center;
+        @include flex(center, center, $space-md, column);
+    }
+
+    &__subtitle {
+        font-family: $font-family-secondary;
+        @include font-size($text-md, $text-md-mb);
+        line-height: $line-height-heading;
+    }
+
+    &__text {
+        @include font-size($text-sm, $text-sm-mb);
+    }
+
+    &__icon {
+        @include size($text-icon);
+        stroke: $text-color-light;
+
+        &-container {
+            @include flex();
+            @include size(3.82rem);
+            padding: $space-xs;
+            border-radius: 100%;
+
+            &--chef {
+                background-color: #ff4b4b97;
+            }
+
+            &--book {
+                background-color: #42c4397d;
+            }
+
+            &--users {
+                background-color: #4bb5fb97;
+            }
+        }
+    }
+}

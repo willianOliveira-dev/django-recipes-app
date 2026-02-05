@@ -48,7 +48,14 @@
     </div>
 </section>
 
-{% include "recipes/components/featured-carousel.html" %}
+{% if weekly_highlights %}
+    {% include "recipes/components/featured-carousel.html" with recipes=weekly_highlights%}
+{% endif %}
+
+{% if most_viewed %}
+    {% include "recipes/components/most-viewed-carousel.html" with recipes=most_viewed %}
+{% endif %}
+
 
 <section class="highlights">
     <div  data-aos="fade-down" class="container highlights__container">
@@ -59,18 +66,23 @@
                 comunidade
             </p>
         </div>
-
-        <div class="highlights__box">
-            <div class="highlights__icon-container">
-                <i data-lucide="chef-hat" class="highlights__icon"></i>
-            </div>
-
-            <h3 class="highlights__subtitle">Nenhuma receita ainda</h3>
-            <p class="highlights__text">
-                Seja o primeiro a compartilhar uma receita incrível!
-            </p>
-            <a class="highlights__link" href="">Compartilhar Receita</a>
+        <div class="recipe-card__grid">
+            {% for recipe in featured %}
+                {% include "recipes/components/recipe_card.html" with recipe=recipe %}
+            {% empty %}
+                <div class="highlights__box">
+                    <div class="highlights__icon-container">
+                        <i data-lucide="chef-hat" class="highlights__icon"></i>
+                    </div>
+                    <h3 class="highlights__subtitle">Nenhuma receita ainda</h3>
+                    <p class="highlights__text">
+                        Seja o primeiro a compartilhar uma receita incrível!
+                    </p>
+                    <a class="highlights__link" href="">Compartilhar Receita</a>
+                </div>
+            {% endfor %}
         </div>
+        
     </div>
 </section>
 
@@ -86,5 +98,7 @@
         </div>
     </div>
 </section>
+
+{% include "recipes/components/scroll-top.html" %}
 
 {% endblock content %}

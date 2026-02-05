@@ -1,0 +1,38 @@
+<section class="recipe-info">
+    <header class="recipe-info__header">
+        <h1 class="recipe-info__title">{{ recipe.title }}</h1>
+        <span class="recipe-info__category">{{ recipe.category.name }}</span>
+    </header>
+
+    <div class="recipe-info__stats-grid">
+        <div class="recipe-info__stat-card">
+            <i data-lucide="clock" class="recipe-info__icon"></i>
+            <div class="recipe-info__stat-content">
+                <span class="recipe-info__label">Tempo</span>
+                <span class="recipe-info__value">
+                    {{ recipe.preparation_time }} {{ recipe.get_preparation_time_unit_display }}
+                </span>
+            </div>
+        </div>
+
+        <div class="recipe-info__stat-card">
+            <i data-lucide="users" class="recipe-info__icon"></i>
+            <div class="recipe-info__stat-content">
+                <span class="recipe-info__label">Rendimento</span>
+                <span class="recipe-info__value">
+                    {{ recipe.servings }} {{ recipe.get_serving_unit_display }}
+                </span>
+            </div>
+        </div>
+
+        <div class="recipe-info__stat-card">
+            <i data-lucide="flame" class="recipe-info__icon"></i>
+            <div class="recipe-info__stat-content">
+                <span class="recipe-info__label">Dificuldade</span>
+                <span class="recipe-info__value recipe-info__value--easy"
+                    >Fácil</span
+                >
+            </div>
+        </div>
+    </div>
+</section>
