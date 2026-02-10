@@ -1,0 +1,91 @@
+@use '../../../../global/css/abstracts/' as *;
+
+.highlights {
+    padding: $space-xxl 0;
+
+    &__container {
+        @include flex(center, center, 4rem, column);
+        text-align: center;
+    }
+
+    &__title {
+        font-family: $font-family-secondary;
+        @include font-size($text-lg, $text-lg-mb);
+        color: $brand-primary-dark;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    &__text {
+        font-size: $text-md;
+        color: $text-color-muted;
+        max-width: 60rem;
+        line-height: 1.5;
+    }
+
+    &__box {
+        &:last-child {
+            padding: 6rem 4rem;
+            border: 2px dashed #ddd;
+            border-radius: 2rem;
+            background-color: $bg-main;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: translateY(-5px);
+                border-color: $brand-primary-main;
+            }
+        }
+    }
+
+    &__icon-container {
+        @include size(8rem);
+        background-color: rgba($brand-primary-main, 0.1);
+        border-radius: 50%;
+        @include flex(center, center);
+        margin: 0 auto 2rem;
+    }
+
+    &__icon {
+        width: 4rem;
+        height: 4rem;
+        color: $brand-primary-main;
+    }
+
+    &__subtitle {
+        font-size: $text-md;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+    }
+
+    &__link {
+        display: inline-block;
+        margin-top: 2rem;
+        padding: 1.2rem 3rem;
+        background-color: $brand-primary-main;
+        color: #fff;
+        font-size: $text-sm;
+        font-weight: 600;
+        border-radius: 1rem;
+        text-decoration: none;
+        transition: filter 0.2s;
+
+        &:hover {
+            filter: brightness(0.9);
+        }
+    }
+}
+@media (max-width: 768px) {
+    .highlights {
+        padding: 4rem 2rem;
+
+        &__title {
+            font-size: $text-lg-mb; 
+        }
+
+        &__text {
+            font-size: $text-md-mb;
+        }
+    }
+}

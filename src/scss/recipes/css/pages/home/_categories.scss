@@ -1,0 +1,194 @@
+@use '../../../../global/css/abstracts/' as *;
+
+.categories {
+    padding: clamp(4rem, 8vw, 8rem) 0;
+    background-color: $bg-light;
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+            circle at 50% 0%,
+            rgba($brand-primary-main, 0.08) 0%,
+            transparent 75%
+        );
+        pointer-events: none;
+    }
+
+    &__container {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 0 $space-lg;
+        position: relative;
+        z-index: 2;
+    }
+
+    &__header {
+        margin-bottom: clamp(3rem, 6vw, 6rem);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__title {
+        font-family: $font-family-secondary;
+        color: $text-color-main;
+        text-align: center;
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+        text-transform: uppercase;
+        @include font-size($text-lg, $text-lg-mb);
+
+        &--highlight {
+            font-style: italic;
+            color: $brand-primary-main;
+            display: block;
+            opacity: 0.9;
+        }
+    }
+
+    &__slider {
+        overflow-x: auto;
+        padding: 2rem 0 4rem;
+        cursor: grab;
+        user-select: none;
+        scroll-behavior: smooth;
+
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        &--active {
+            scroll-behavior: auto;
+            cursor: grabbing;
+            scroll-snap-type: none;
+        }
+    }
+
+    &__list {
+        display: flex;
+        gap: clamp(1.5rem, 4vw, 4rem);
+        list-style: none;
+        padding: 0;
+        scroll-snap-type: x mandatory;
+
+        &::after {
+            content: '';
+            padding-right: 2rem;
+        }
+    }
+
+    &__item {
+        flex: 0 0 auto;
+        scroll-snap-align: center;
+        width: clamp(12rem, 20vw, 18rem);
+        transition:
+            transform 0.3s ease,
+            opacity 0.3s ease;
+    }
+
+    &__link {
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        perspective: 1000px;
+    }
+
+    &__image-wrapper {
+        position: relative;
+        @include size(clamp(10rem, 18vw, 16rem));
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 70%;
+            height: 70%;
+            background: $brand-primary-main;
+            filter: blur(35px);
+            opacity: 0;
+            transition: all 0.5s ease;
+            z-index: -1;
+        }
+
+        filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.12));
+        transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+
+        .categories__link:hover & {
+            transform: translateY(-12px) scale(1.08) rotate(5deg);
+            filter: drop-shadow(0 25px 40px rgba(0, 0, 0, 0.15));
+
+            &::before {
+                opacity: 0.3;
+                width: 90%;
+                height: 90%;
+            }
+        }
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        user-select: none;
+        pointer-events: none;
+        image-rendering: -webkit-optimize-contrast;
+    }
+
+    &__name {
+        font-family: $font-family-main;
+        font-size: clamp(1rem, 2vw, 1.2rem);
+        font-weight: 800;
+        color: $text-color-muted;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        position: relative;
+        padding-bottom: 0.6rem;
+        text-align: center;
+        transition: color 0.3s ease;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background: $brand-primary-main;
+            transition: width 0.4s cubic-bezier(0.2, 1, 0.3, 1);
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .categories__link:hover & {
+            color: $text-color-main;
+
+            &::after {
+                width: 60%;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        &__header {
+            padding-left: 1rem;
+        }
+
+        &__item {
+            width: 14rem;
+        }
+    }
+}

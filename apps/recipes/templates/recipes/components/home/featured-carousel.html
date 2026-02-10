@@ -1,3 +1,5 @@
+{% load static %}
+
 <section class="featured">
     <div data-aos="fade-down" class="container">
         <header class="featured__header">
@@ -8,11 +10,19 @@
                 {% for recipe in recipes %}
                     <article class="featured__item featured__item--active">
                         <div class="featured__image-container">
-                            <img
-                                src="{{ recipe.cover.url }}"
-                                alt="{{ recipe.title }}"
-                                class="featured__image"
-                            />
+                            {% if recipe.cover %}
+                                <img
+                                    src="{{ recipe.cover.url }}"
+                                    alt="{{ recipe.title }}"
+                                    class="featured__image"
+                                />
+                            {% else %}
+                                <img
+                                    src="{% static 'recipes/images/default.png' %}"
+                                    alt="Receita sem imagem"
+                                    class="featured__image"
+                                />
+                            {% endif %}
                         </div>
                         <div class="featured__content">
                             <h3 class="featured__item-title">

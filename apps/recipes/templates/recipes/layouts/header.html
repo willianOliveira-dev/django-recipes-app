@@ -1,7 +1,7 @@
 <header class="header">
     <div class="container header__container">
         <div class="header__left">
-            {% include "recipes/components/logo.html" %}
+            {% include "recipes/components/ui/logo.html" %}
 
             <nav class="header__nav">
                 <ul class="header__list">
@@ -16,227 +16,14 @@
                                 class="header__link-icon"
                             ></i>
                         </a>
-
-                        <!-- Dropdown -->
                         <div class="header__dropdown">
                             <div class="header__dropdown-grid">
-                                <a href="#" class="header__dropdown-link">
-                                    <i
-                                        data-lucide="rice-bowl"
-                                        class="header__dropdown-icon"
-                                    ></i>
-                                    <span>Arroz</span>
-                                </a>
-                                <a href="#" class="header__dropdown-link">
-                                    <i
-                                        data-lucide="wheat"
-                                        class="header__dropdown-icon"
-                                    ></i>
-                                    <span>Aves</span>
-                                </a>
-                                <a href="#" class="header__dropdown-link">
-                                    <i
-                                        data-lucide="cake-slice"
-                                        class="header__dropdown-icon"
-                                    ></i>
-                                    <span>Bolos</span>
-                                </a>
-                                <a href="#" class="header__dropdown-link">
-                                    <i
-                                        data-lucide="coffee"
-                                        class="header__dropdown-icon"
-                                    ></i>
-                                    <span>Café da Manhã</span>
-                                </a>
-                                <a href="#" class="header__dropdown-link">
-                                    <i
-                                        data-lucide="beef"
-                                        class="header__dropdown-icon"
-                                    ></i>
-                                    <span>Carnes</span>
-                                </a>
-                                <a href="#" class="header__dropdown-link">
-                                    <i
-                                        data-lucide="flame"
-                                        class="header__dropdown-icon"
-                                    ></i>
-                                    <span>Crepes e Panquecas</span>
-                                </a>
-                                <a href="#" class="header__dropdown-link">
-                                    <i
-                                        data-lucide="candy"
-                                        class="header__dropdown-icon"
-                                    ></i>
-                                    <span>Doces</span>
-                                </a>
-                                <a href="#" class="header__dropdown-link">
-                                    <i
-                                        data-lucide="cookie"
-                                        class="header__dropdown-icon"
-                                    ></i>
-                                    <span>Farofas</span>
-                                </a>
-                                <a href="#" class="header__dropdown-link">
-                                    <i
-                                        data-lucide="drumstick"
-                                        class="header__dropdown-icon"
-                                    ></i>
-                                    <span>Frangos e Aves</span>
-                                </a>
-                                <a href="#" class="header__dropdown-link">
-                                    <i
-                                        data-lucide="wheat"
-                                        class="header__dropdown-icon"
-                                    ></i>
-                                    <span>Grãos e Cereais</span>
-                                </a>
-                                <a href="#" class="header__dropdown-link">
-                                    <i
-                                        data-lucide="pizza"
-                                        class="header__dropdown-icon"
-                                    ></i>
-                                    <span>Jantar</span>
-                                </a>
-                                <a href="#" class="header__dropdown-link">
-                                    <i
-                                        data-lucide="pizza"
-                                        class="header__dropdown-icon"
-                                    ></i>
-                                    <span>Almoço</span>
-                                </a>
-                                <a href="#" class="header__dropdown-link">
-                                    <i
-                                        data-lucide="carrot"
-                                        class="header__dropdown-icon"
-                                    ></i>
-                                    <span>Legumes e Verduras</span>
-                                </a>
-                                <a href="#" class="header__dropdown-link">
-                                    <i
-                                        data-lucide="wheat"
-                                        class="header__dropdown-icon"
-                                    ></i>
-                                    <span>Massas</span>
-                                </a>
-                                <a href="#" class="header__dropdown-link">
-                                    <i
-                                        data-lucide="droplet"
-                                        class="header__dropdown-icon"
-                                    ></i>
-                                    <span>Molhos</span>
-                                </a>
-                                <a href="#" class="header__dropdown-link">
-                                    <i
-                                        data-lucide="egg"
-                                        class="header__dropdown-icon"
-                                    ></i>
-                                    <span>Ovos</span>
-                                </a>
-                                <a href="#" class="header__dropdown-link">
-                                    <i
-                                        data-lucide="bread-slice"
-                                        class="header__dropdown-icon"
-                                    ></i>
-                                    <span>Pastas e Patês</span>
-                                </a>
-                                <a href="#" class="header__dropdown-link">
-                                    <i
-                                        data-lucide="fish"
-                                        class="header__dropdown-icon"
-                                    ></i>
-                                    <span>Peixes e Frutos do Mar</span>
-                                </a>
-                                <a href="#" class="header__dropdown-link">
-                                    <i
-                                        data-lucide="croissant"
-                                        class="header__dropdown-icon"
-                                    ></i>
-                                    <span>Pães</span>
-                                </a>
-                                <a href="#" class="header__dropdown-link">
-                                    <i
-                                        data-lucide="pizza"
-                                        class="header__dropdown-icon"
-                                    ></i>
-                                    <span>Pizzas e Massas Salgadas</span>
-                                </a>
-                                <a href="#" class="header__dropdown-link">
-                                    <i
-                                        data-lucide="bowl"
-                                        class="header__dropdown-icon"
-                                    ></i>
-                                    <span>Pures e Cremes salgados</span>
-                                </a>
-                                <a href="#" class="header__dropdown-link">
-                                    <i
-                                        data-lucide="salad"
-                                        class="header__dropdown-icon"
-                                    ></i>
-                                    <span>Saladas</span>
-                                </a>
-                                <a href="#" class="header__dropdown-link">
-                                    <i
-                                        data-lucide="triangle"
-                                        class="header__dropdown-icon"
-                                    ></i>
-                                    <span>Salgadinhos e Petiscos</span>
-                                </a>
-                                <a href="#" class="header__dropdown-link">
-                                    <i
-                                        data-lucide="sandwich"
-                                        class="header__dropdown-icon"
-                                    ></i>
-                                    <span>Sanduíches</span>
-                                </a>
-                                <a href="#" class="header__dropdown-link">
-                                    <i
-                                        data-lucide="ice-cream-bowl"
-                                        class="header__dropdown-icon"
-                                    ></i>
-                                    <span>Sem Glúten</span>
-                                </a>
-                                <a href="#" class="header__dropdown-link">
-                                    <i
-                                        data-lucide="ice-cream-cone"
-                                        class="header__dropdown-icon"
-                                    ></i>
-                                    <span>Sobremesas</span>
-                                </a>
-                                <a href="#" class="header__dropdown-link">
-                                    <i
-                                        data-lucide="soup"
-                                        class="header__dropdown-icon"
-                                    ></i>
-                                    <span>Sopas</span>
-                                </a>
-                                <a href="#" class="header__dropdown-link">
-                                    <i
-                                        data-lucide="sparkles"
-                                        class="header__dropdown-icon"
-                                    ></i>
-                                    <span>Temperos</span>
-                                </a>
-                                <a href="#" class="header__dropdown-link">
-                                    <i
-                                        data-lucide="cake"
-                                        class="header__dropdown-icon"
-                                    ></i>
-                                    <span>Tortas</span>
-                                </a>
-                                <a href="#" class="header__dropdown-link">
-                                    <i
-                                        data-lucide="leaf"
-                                        class="header__dropdown-icon"
-                                    ></i>
-                                    <span>Vegano</span>
-                                </a>
-                                <a href="#" class="header__dropdown-link">
-                                    <i
-                                        data-lucide="sprout"
-                                        class="header__dropdown-icon"
-                                    ></i>
-                                    <span>Vegetariano</span>
-                                </a>
+                                {% for category in categories %}
+                                    <a href="{% url 'recipes:category' slug=category.slug %}" class="header__dropdown-link">
+                                        <i data-lucide="{{ category.icon_key }}" class="header__dropdown-icon"></i>
+                                        <span>{{ category.name }}</span>
+                                    </a>
+                                {% endfor %}
                             </div>
                         </div>
 
@@ -272,4 +59,4 @@
     </div>
 </header>
 
-{% include "recipes/components/menu.html" %}
+{% include "recipes/components/ui/menu.html" %}

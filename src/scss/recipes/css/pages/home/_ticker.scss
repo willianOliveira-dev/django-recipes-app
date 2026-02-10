@@ -1,0 +1,149 @@
+@use '../../../../global/css/abstracts/' as *;
+
+.ticker {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    background-color: $bg-light;
+    padding: 12rem 0;
+    perspective: 100rem;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 15%;
+        height: 100%;
+        z-index: 10;
+        pointer-events: none;
+    }
+
+    &::before {
+        left: 0;
+        background: linear-gradient(
+            to right,
+            $bg-light 0%,
+            rgba($bg-light, 0) 100%
+        );
+    }
+
+    &::after {
+        right: 0;
+        background: linear-gradient(
+            to left,
+            $bg-light 0%,
+            rgba($bg-light, 0) 100%
+        );
+    }
+
+    &__row {
+        position: relative;
+        overflow: visible;
+        white-space: nowrap;
+        width: 200%;
+        margin-left: -50%;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+
+        &--dark {
+            background-color: $text-color-main;
+            color: $text-color-light;
+            transform: rotate(3deg) translateY(20px);
+            z-index: 2;
+
+            .ticker__track {
+                animation: ticker-left-to-right 30s linear infinite;
+                will-change: transform;
+            }
+        }
+
+        &--primary {
+            background-color: $brand-primary-main;
+            color: $text-color-light;
+            transform: rotate(-3deg) translateY(-20px);
+            z-index: 1;
+
+            .ticker__track {
+                animation: ticker-right-to-left 30s linear infinite;
+                will-change: transform;
+            }
+        }
+
+        &:hover .ticker__track {
+            animation-play-state: paused;
+        }
+    }
+
+    &__track {
+        display: flex;
+        align-items: center;
+        gap: $space-xxl;
+        padding: $space-xl 0;
+        white-space: nowrap;
+    }
+
+    &__item {
+        font-family: $font-family-main;
+        font-size: clamp(2rem, 5vw, 4rem);
+        font-weight: 900;
+        line-height: 1;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        -webkit-text-stroke: 1px transparent;
+        transition: all 0.3s ease;
+
+        &::after {
+            content: '•';
+            margin-left: $space-xxl;
+            opacity: 0.3;
+        }
+
+        &:nth-child(odd) {
+            transform: skewX(-5deg);
+        }
+
+        &:nth-child(even) {
+            opacity: 0.8;
+        }
+
+        &:hover {
+            opacity: 1;
+            color: lighten($brand-primary-main, 20%);
+        }
+
+        &:contains('#') {
+            -webkit-text-stroke: 1px $text-color-light;
+            color: transparent;
+            font-style: italic;
+        }
+    }
+
+    @media (max-width: map-get($breakpoints, 'medium')) {
+        padding: 6rem 0;
+        &__row {
+            width: 250%;
+            margin-left: -75%;
+        }
+    }
+}
+
+@keyframes ticker-left-to-right {
+    0% {
+        transform: translate3d(-50%, 0, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes ticker-right-to-left {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-50%, 0, 0);
+    }
+}

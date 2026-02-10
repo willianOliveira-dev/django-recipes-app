@@ -22,6 +22,19 @@ html {
     padding: 0;
 }
 
+.base-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background-color: abstracts.$bg-main;
+    font-size: abstracts.$text-sm;
+}
+
+.main {
+    flex: 1;
+}
+
 /**
  * Basic styles for links
  */

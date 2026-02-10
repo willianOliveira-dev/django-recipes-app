@@ -1,0 +1,86 @@
+{% extends "recipes/layouts/base.html" %}
+{% load static %}
+
+{% block title %}
+    {{ block.super }} - {{ category.name }}
+{% endblock title %}
+
+{% block content %}
+<section class="recipes-by-category">
+    <div class="container">
+        <div class="recipes-by-category__hero" aria-hidden="true">
+            <div class="recipes-by-category__hero-content">
+                <h1 class="recipes-by-category__title">
+                    {{ category.name }}
+                </h1>
+                <p class="recipes-by-category__subtitle">
+                    Explora receitas incríveis desta categoria
+                </p>
+            </div>
+        </div>
+
+        <div class="recipes-by-category__filters">
+            <form method="get" class="filter-controls">
+
+                <div class="filter-controls__field">
+                    <label for="id_order" class="filter-controls__label">
+                        Ordenar por
+                    </label>
+                    <select name="order" id="id_order" class="filter-controls__select">
+                        <option value="desc" {% if request.GET.order == 'recent' %}selected{% endif %}>
+                            Mais recente
+                        </option>
+                        <option value="asc" {% if request.GET.order == 'oldest' %}selected{% endif %}>
+                            Mais antigo
+                        </option>
+                        <option value="most_viewed" {% if request.GET.order == 'popular' %}selected{% endif %}>
+                            Mais acessados
+                        </option>
+                        <option value="most_rated" {% if request.GET.order == 'rating' %}selected{% endif %}>
+                            Maiores notas
+                        </option>
+                    </select>
+                </div>
+
+                <div class="filter-controls__field">
+                    <label for="id_difficulty" class="filter-controls__label">
+                        Dificuldade
+                    </label>
+                    <select name="difficulty" id="id_difficulty" class="filter-controls__select">
+                        <option value="">Todas</option>
+                        <option value="facil" {% if request.GET.difficulty == 'facil' %}selected{% endif %}>
+                            Fácil
+                        </option>
+                        <option value="medio" {% if request.GET.difficulty == 'medio' %}selected{% endif %}>
+                            Médio
+                        </option>
+                        <option value="dificil" {% if request.GET.difficulty == 'dificil' %}selected{% endif %}>
+                            Difícil
+                        </option>
+                        <option value="expert" {% if request.GET.difficulty == 'expert' %}selected{% endif %}>
+                            Expert / Profissional
+                        </option>
+                    </select>
+                </div>
+
+                <button type="submit" class="filter-controls__submit">
+                    Aplicar
+                </button>
+
+            </form>
+        </div>
+
+        {% if recipes %}
+            <div class="recipes-by-category__list">
+                {% for recipe in recipes %}
+                    {% include "recipes/components/ui/recipe-card.html" with recipe=recipe %}
+                {% endfor %}
+            </div>
+        {% else %}
+            <p class="recipes-by-category__empty">
+                Nenhuma receita encontrada nesta categoria.
+            </p>
+        {% endif %}
+    </div>
+</section>
+{% endblock content %}

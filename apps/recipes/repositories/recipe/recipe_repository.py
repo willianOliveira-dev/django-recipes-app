@@ -18,7 +18,10 @@ class RecipeRepository:
         """
         return (
             self.model.objects.select_related("category", "author")
-            .annotate(rating_avg=Avg("ratings__rating"), rating_count=Count("ratings"))
+            .annotate(
+                rating_avg=Avg("ratings__rating"),
+                rating_count=Count("ratings", distinct=True),
+            )
             .filter(is_published=is_published)
         )
 
@@ -32,7 +35,7 @@ class RecipeRepository:
         queryset = self._get_base_queryset()
 
         if category_slug:
-            queryset = queryset.filter(category__slug=category_slug)
+            queryset = queryset.filter(Q(category__slug=category_slug))
 
         if search_term:
             queryset = queryset.filter(
@@ -62,7 +65,11 @@ class RecipeRepository:
         """
         Lista as receitas com maior volume de tráfego, ordenadas por visualizações e nota média.
         """
-        return self._get_base_queryset().filter().order_by("-views_count", "-rating_avg")[:limit]
+        return (
+            self._get_base_queryset()
+            .filter()
+            .order_by("-views_count", "-rating_avg")[:limit]
+        )
 
     def get_top_rated(self, limit: int = 6):
         """

@@ -149,6 +149,7 @@
         font-size: 1.7rem;
         color: $text-color-muted;
         text-align: center;
+        font-style: italic;
         padding: 2.4rem;
         background: rgba($bg-light, 0.7);
         border-radius: 16px;
@@ -163,6 +164,7 @@
         padding: 3.2rem 2rem;
         text-align: center;
         color: $text-color-muted;
+
         background: rgba($bg-light, 0.7);
         border-radius: 20px;
         border: 1px dashed rgba($border-light, 0.5);

@@ -1,0 +1,28 @@
+<section class="highlights">
+    <div  data-aos="fade-down" class="container highlights__container">
+        <div class="highlights__box">
+            <h2 class="highlights__title">Receitas em Destaque</h2>
+            <p class="highlights__text">
+                Descubra as receitas mais recentes aprovadas pela nossa
+                comunidade
+            </p>
+        </div>
+        <div class="recipe-card__grid">
+            {% for recipe in featured %}
+                {% include "recipes/components/ui/recipe-card.html" with recipe=recipe %}
+            {% empty %}
+                <div class="highlights__box">
+                    <div class="highlights__icon-container">
+                        <i data-lucide="chef-hat" class="highlights__icon"></i>
+                    </div>
+                    <h3 class="highlights__subtitle">Nenhuma receita ainda</h3>
+                    <p class="highlights__text">
+                        Seja o primeiro a compartilhar uma receita incrível!
+                    </p>
+                    <a class="highlights__link" href="">Compartilhar Receita</a>
+                </div>
+            {% endfor %}
+        </div>
+        
+    </div>
+</section>

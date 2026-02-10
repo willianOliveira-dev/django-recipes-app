@@ -1,0 +1,29 @@
+{% load static %} 
+
+<section
+    class="hero"
+    style="
+        background-image: url('{% static 'recipes/images/image-hero.jpeg' %}');
+    "
+>
+    <div data-aos="zoom-in-up" class="container hero__container">
+        <div class="hero__box">
+            <span class="hero__highlight"
+                ><i data-lucide="sparkle" class="hero__icon"></i>Descubra
+                sabores incríveis</span
+            >
+            <h1 class="hero__title">
+                Receitas que
+                <span class="hero__title--highlight">inspiram</span>
+            </h1>
+            <p class="hero__text">
+                Explore milhares de receitas compartilhadas pela nossa
+                comunidade e descubra novos sabores para sua cozinha.
+            </p>
+            <div class="hero__links">
+                <a class="hero__link" href="{% url 'recipes:recipes' %}">Explorar Receitas</a>
+                <a class="hero__link" href="">Compartilhar Receita</a>
+            </div>
+        </div>
+    </div>
+</section>

@@ -6,6 +6,7 @@ class ServiceFacade:
 
     def __init__(self) -> None:
         self._recipe = None
+        self._category = None
 
     @property
     def recipe(self):
@@ -16,7 +17,14 @@ class ServiceFacade:
 
         return self._recipe
 
-    ...
+    @property
+    def category(self):
+        if self._category is None:
+            from apps.recipes.services.category.category_service import CategoryService
+
+            self._category = CategoryService()
+
+        return self._category
 
 
 services = ServiceFacade()

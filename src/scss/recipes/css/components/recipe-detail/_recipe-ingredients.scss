@@ -167,10 +167,6 @@
         border-radius: $space-sm;
     }
 
-    &__icon-fallback {
-        @include size(3rem);
-    }
-
     &__text {
         font-family: $font-family-main;
         font-size: 1.7rem;
@@ -189,6 +185,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        font-style: italic;
         padding: 3rem 1.6rem;
         text-align: center;
         color: $text-color-muted;

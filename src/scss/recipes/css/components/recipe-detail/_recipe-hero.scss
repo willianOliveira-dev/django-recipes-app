@@ -50,45 +50,6 @@
     }
 }
 
-.recipe-hero__image-badge {
-    position: absolute;
-    bottom: 24px;
-    left: 24px;
-    background: rgba($bg-light, 0.92);
-    backdrop-filter: blur(10px);
-    color: $text-color-main;
-    padding: 0.8rem 1.6rem;
-    border-radius: 50px;
-    font-family: $font-family-main;
-    font-weight: 600;
-    font-size: 1.4rem;
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba($border-light, 0.6);
-    z-index: 2;
-
-    i {
-        width: 18px;
-        height: 18px;
-        stroke-width: 2;
-        color: $brand-primary-main;
-    }
-
-    @media (max-width: 768px) {
-        bottom: 16px;
-        left: 16px;
-        font-size: 1.3rem;
-        padding: 0.7rem 1.4rem;
-
-        i {
-            width: 16px;
-            height: 16px;
-        }
-    }
-}
-
 .recipe-hero__share-btn {
     position: absolute;
     top: 24px;

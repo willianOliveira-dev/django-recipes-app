@@ -4,101 +4,27 @@
    {{ block.super }} - Home | Receitas Incríveis
 {% endblock title %}
 
-{% load static %} 
-
 {% block content %}
-<section
-    class="hero"
-    style="
-        background-image: url('{% static 'recipes/images/image-hero.jpeg' %}');
-    "
->
-    <div data-aos="zoom-in-up" class="container hero__container">
-        <div class="hero__box">
-            <span class="hero__highlight"
-                ><i data-lucide="sparkle" class="hero__icon"></i>Descubra
-                sabores incríveis</span
-            >
-            <h1 class="hero__title">
-                Receitas que
-                <span class="hero__title--highlight">inspiram</span>
-            </h1>
-            <p class="hero__text">
-                Explore milhares de receitas compartilhadas pela nossa
-                comunidade e descubra novos sabores para sua cozinha.
-            </p>
-            <div class="hero__links">
-                <a class="hero__link" href="{% url 'recipes:recipes' %}">Explorar Receitas</a>
-                <a class="hero__link" href="">Compartilhar Receita</a>
-            </div>
-        </div>
-    </div>
-</section>
+{% include "recipes/components/home/hero.html" %}
 
-
-<section class="benefits">
-    <div class="container benefits__container">
-
-        {% include "recipes/components/benefit_card.html" with class="benefits__icon-container--chef" icon="chef-hat" title="Receitas Verificadas" description="Todas as receitas são revisadas pela nossa equipe antes de serem publicadas." %}
-
-        {% include "recipes/components/benefit_card.html" with class="benefits__icon-container--book" icon="book-open" title="Instruções Detalhadas" description="Passo a passo completo para você preparar cada receita com perfeição." %} 
-
-        {% include "recipes/components/benefit_card.html" with class="benefits__icon-container--users" icon="users" title="Comunidade Ativa" description="Compartilhe suas receitas e inspire outros amantes da culinária." %}
-    
-    </div>
-</section>
+{% include "recipes/components/home/benefits.html" %}
 
 {% if weekly_highlights %}
-    {% include "recipes/components/featured-carousel.html" with recipes=weekly_highlights%}
+    {% include "recipes/components/home/featured-carousel.html" with recipes=weekly_highlights%}
 {% endif %}
 
 {% if most_viewed %}
-    {% include "recipes/components/most-viewed-carousel.html" with recipes=most_viewed %}
+    {% include "recipes/components/home/most-viewed-carousel.html" with recipes=most_viewed %}
 {% endif %}
 
+{% include "recipes/components/home/highlights.html" %}
 
-<section class="highlights">
-    <div  data-aos="fade-down" class="container highlights__container">
-        <div class="highlights__box">
-            <h2 class="highlights__title">Receitas em Destaque</h2>
-            <p class="highlights__text">
-                Descubra as receitas mais recentes aprovadas pela nossa
-                comunidade
-            </p>
-        </div>
-        <div class="recipe-card__grid">
-            {% for recipe in featured %}
-                {% include "recipes/components/recipe_card.html" with recipe=recipe %}
-            {% empty %}
-                <div class="highlights__box">
-                    <div class="highlights__icon-container">
-                        <i data-lucide="chef-hat" class="highlights__icon"></i>
-                    </div>
-                    <h3 class="highlights__subtitle">Nenhuma receita ainda</h3>
-                    <p class="highlights__text">
-                        Seja o primeiro a compartilhar uma receita incrível!
-                    </p>
-                    <a class="highlights__link" href="">Compartilhar Receita</a>
-                </div>
-            {% endfor %}
-        </div>
-        
-    </div>
-</section>
+{% include "recipes/components/home/categories.html" %}
 
-<section class="share">
-    <div data-aos="fade-down" class="container share__container">
-        <div class="share__box">
-            <h2 class="share__title">Compartilhe suas receitas</h2>
-            <p class="share__text">
-                Descubra as receitas mais recentes aprovadas pela nossa
-                comunidade
-            </p>
-            <a class="share__link" href="">Criar Conta Gratuita</a>
-        </div>
-    </div>
-</section>
+{% include "recipes/components/home/ticker.html" %}
 
-{% include "recipes/components/scroll-top.html" %}
+{% include "recipes/components/home/share.html" %}
+
+{% include "recipes/components/ui/scroll-top.html" %}
 
 {% endblock content %}

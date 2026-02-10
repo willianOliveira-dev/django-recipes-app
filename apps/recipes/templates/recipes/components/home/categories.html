@@ -1,0 +1,30 @@
+{% load static %}
+
+<section class="categories">
+    <div class="categories__container" data-aos="fade-down">
+        <header class="categories__header">
+            <h2 class="categories__title">
+                Escolha seu <span class="categories__title--highlight">Sabor Favorito</span>
+            </h2>
+        </header>
+
+        <div class="categories__slider">
+            <ul class="categories__list">
+                {% for category in categories %}
+                <li class="categories__item">
+                    <a href="{% url 'recipes:category' slug=category.slug %}" class="categories__link">
+                        <div class="categories__image-wrapper">
+                            {% if category.image %}
+                            <img src="{{ category.image.url }}" alt="{{ category.name }}" class="categories__img">
+                            {% else %}
+                            <img src="{% static 'recipes/images/default.png' %}" alt="Sem imagem" class="categories__img">
+                            {% endif %}
+                        </div>
+                        <span class="categories__name">{{ category.name }}</span>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>

@@ -1,6 +1,8 @@
 @use '../../../global/css/abstracts' as *;
 
 .recipe-card {
+    display: flex;
+    flex-direction: column;
     background-color: $bg-light;
     border-radius: $space-md;
     border: 1px solid $border-light;
@@ -37,13 +39,14 @@
         max-width: $max-width;
         margin: 0 auto;
 
-        @media (max-width: map-get($breakpoints, 'large')) {
+        @media (max-width: 1024px) {
             @include grid(2, $space-md);
             padding: $space-lg $space-md;
         }
 
-        @media (max-width: map-get($breakpoints, 'medium')) {
+        @media (max-width: 768px) {
             @include grid(1, $space-md);
+            padding: 0;
         }
     }
 
@@ -91,6 +94,7 @@
 
     &__content {
         padding: $space-lg;
+        flex: 1;
     }
 
     &__title {

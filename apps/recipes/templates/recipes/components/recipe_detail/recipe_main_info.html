@@ -1,7 +1,7 @@
 <section class="recipe-info">
     <header class="recipe-info__header">
         <h1 class="recipe-info__title">{{ recipe.title }}</h1>
-        <span class="recipe-info__category">{{ recipe.category.name }}</span>
+        <a href="{% url 'recipes:category' slug=recipe.category.slug %}" class="recipe-info__category">{{ recipe.category.name }}</a>
     </header>
 
     <div class="recipe-info__stats-grid">

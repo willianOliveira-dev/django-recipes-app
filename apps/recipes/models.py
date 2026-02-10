@@ -21,6 +21,13 @@ class Category(models.Model):
         db_index=True,
     )
 
+    image = models.ImageField(
+        upload_to="categories/cover/%Y/%m/%d",
+        verbose_name="Imagem da categoria",
+        blank=True,
+        null=True,
+    )
+
     icon_key = models.CharField(
         max_length=20,
         blank=True,

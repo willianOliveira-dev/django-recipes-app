@@ -1,3 +1,5 @@
+{% load static %}
+
 <section class="recipe-ingredients">
     <header class="recipe-section__header">
         <h2 class="recipe-section__title">
@@ -23,7 +25,10 @@
                                     class="recipe-ingredients__icon"
                                     loading="lazy">
                             {% else %}
-                                <i data-lucide="leaf" class="recipe-ingredients__icon-fallback"></i>
+                                <img src="{% static 'recipes/images/default.png' %}" 
+                                    alt="Ingrediente sem imagem" 
+                                    class="recipe-ingredients__icon"
+                                    loading="lazy">
                             {% endif %}
 
                             <span class="recipe-ingredients__text">

@@ -1,0 +1,21 @@
+@use '../../../../global/css/abstracts/' as *;
+
+
+.benefits {
+    padding: $space-xxl 0;
+    background-color: $bg-muted;
+    &__container {
+        @include flex(center, center, $space-lg);
+    }
+}
+
+@media (max-width: 768px) {
+    
+    .benefits {
+        &__container {
+            flex-direction: column;
+        }
+    }
+
+    
+}

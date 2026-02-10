@@ -1,14 +1,20 @@
+{% load static %}
+
 <article class="recipe-card" data-aos="fade-down">
     <header class="recipe-card__header">
         <a href="{% url 'recipes:recipe_detail' slug=recipe.slug  %}" class="recipe-card__image-link">
             {% if recipe.cover %}
-            <img
-                src="{{ recipe.cover.url }}"
-                alt="{{ recipe.title }}"
-                class="recipe-card__image"
-            />
+                <img
+                    src="{{ recipe.cover.url }}"
+                    alt="{{ recipe.title }}"
+                    class="recipe-card__image"
+                />
             {% else %}
-            <div class="recipe-card__placeholder"></div>
+                <img
+                    src="{% static 'recipes/images/default.png'%}"
+                    alt="{{ recipe.title }}"
+                    class="recipe-card__image"
+                />
             {% endif %}
         </a>
 

@@ -1,4 +1,5 @@
-@forward './home';
-@forward './login';
-@forward './recipes';
-@forward './recipe-detail';
+@forward 'home';
+@forward '../pages/auth/login';
+@forward '../pages/recipes/recipes';
+@forward '../pages/recipe-by-category/recipes-by-category';
+@forward '../pages/recipe-detail/recipe-detail';

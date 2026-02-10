@@ -1,0 +1,206 @@
+@use '../../../../global/css/abstracts' as *;
+
+.recipes-by-category {
+    padding: $space-xl 0;
+    width: 100%;
+
+    &__hero {
+        position: relative;
+        height: 28rem;
+        margin-bottom: $space-xl;
+        border-radius: 1.2rem;
+        overflow: hidden;
+        box-shadow: $box-shadow-sm;
+
+        background: linear-gradient(120deg, #ff7a18, #ff9f1c, #ff3300, #ff7547);
+        background-size: 300% 300%;
+        animation: heroGradientShift 14s ease-in-out infinite;
+
+        @media (max-width: 768px) {
+            height: 20rem;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            inset: -50%;
+            background:
+                radial-gradient(
+                    circle at 30% 30%,
+                    rgba(255, 255, 255, 0.25),
+                    transparent 60%
+                ),
+                radial-gradient(
+                    circle at 70% 70%,
+                    rgba(255, 180, 80, 0.35),
+                    transparent 55%
+                );
+            animation: heroGlowMove 18s linear infinite;
+            z-index: 1;
+        }
+    }
+
+    &__hero-content {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 $space-md;
+        z-index: 2;
+    }
+
+    &__title {
+        font-family: $font-family-secondary;
+        @include font-size($text-xl, $text-lg-mb);
+        font-weight: 700;
+        line-height: $line-height-tight;
+        color: $text-color-light;
+        margin-bottom: $space-sm;
+        letter-spacing: -0.02em;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    &__subtitle {
+        font-family: $font-family-main;
+        @include font-size($text-md, $text-sm-mb);
+        color: rgba($text-color-light, 0.95);
+        max-width: 60rem;
+        font-weight: 400;
+        line-height: 1.6;
+        letter-spacing: 0.5px;
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    &__hero--text-only {
+        height: auto;
+        background: $bg-light;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: $space-xl 0;
+        margin-bottom: $space-xl;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    &__filters {
+        margin-bottom: $space-xl;
+    }
+}
+
+@keyframes heroGradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes heroGlowMove {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+        transform: translate(10%, -10%) rotate(180deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(360deg);
+    }
+}
+
+.filter-controls {
+    @include flex(flex-start, flex-end, $space-md);
+    flex-wrap: wrap;
+    gap: $space-sm;
+    padding: $space-md 0;
+    border-bottom: 1px solid $border-light;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+.filter-controls__field {
+    display: flex;
+    flex-direction: column;
+    gap: $space-xs;
+    min-width: 18rem;
+
+    @media (max-width: 768px) {
+        min-width: 100%;
+    }
+}
+
+.filter-controls__label {
+    font-size: $text-xs;
+    color: $text-color-muted;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.filter-controls__select {
+    padding: 0.8rem 1.2rem;
+    border: 1px solid $border-light;
+    border-radius: $space-sm;
+    background: $input-bg;
+    font-family: $font-family-main;
+    font-size: $text-sm;
+    width: 100%;
+    appearance: none;
+    background-size: $space-md;
+
+    &:focus {
+        outline: none;
+        border-color: $brand-primary-main;
+        box-shadow: 0 0 0 2px rgba($brand-primary-main, 0.2);
+    }
+}
+
+.filter-controls__submit {
+    background-color: transparent;
+    border: 2px solid $border-light;
+    color: $text-color-main;
+    border-radius: 50px;
+    padding: 0.8rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-family: $font-family-main;
+    font-weight: 600;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+
+    &:hover {
+        background: rgba($brand-primary-main, 0.05);
+        border-color: rgba($brand-primary-main, 0.4);
+        color: $brand-primary-main;
+    }
+
+    @media (max-width: 768px) {
+        width: 100%;
+        justify-content: center;
+        padding: 0.8rem;
+    }
+}
+
+.recipes-by-category__list {
+    @include grid(3, $space-xl);
+}
+
+.recipes-by-category__empty {
+    text-align: center;
+    font-size: $text-md;
+    color: $text-color-muted;
+    padding: $space-xxl 0;
+    font-style: italic;
+}

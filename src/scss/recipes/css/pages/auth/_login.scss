@@ -1,11 +1,12 @@
-@use '../../../global/css/abstracts' as *;
+@use '../../../../global/css/abstracts/' as *;
+
 
 .auth {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: $bg-cream;
+    background-color: $bg-main;
     padding: $space-sm;
 
     &__container {
@@ -45,7 +46,7 @@
 
     &__tabs {
         display: flex;
-        background-color: $bg-cream;
+        background-color: $bg-main;
         padding: $space-xs;
         border-radius: $space-sm;
         margin-bottom: $space-md;

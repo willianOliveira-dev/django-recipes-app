@@ -25,7 +25,7 @@
         }
     }
 
-    @media (max-width: map-get($breakpoints, 'medium')) {
+    @media (max-width: 768px) {
         &__back {
             font-size: $text-xs-mb;
         }

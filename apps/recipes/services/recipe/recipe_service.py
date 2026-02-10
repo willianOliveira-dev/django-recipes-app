@@ -39,7 +39,7 @@ class RecipeService:
 
         return recipe
 
-    def search_catalog(
+    def get_recipe_catalog(
         self, category_slug: str | None = None, search_term: str | None = None
     ):
         """
